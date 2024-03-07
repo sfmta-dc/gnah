@@ -434,6 +434,9 @@ const pages = [
         "section-url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/taxis"
     }
 ]
+// log current page
+console.log(window.location.href)
+
 
 // Check if the URL the user is currrntly on is in the "url" property of any of the objects in the "pages" array
 
