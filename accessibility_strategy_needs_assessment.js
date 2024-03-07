@@ -35,7 +35,7 @@ const pages = [
         "section-url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024"
     },
     {
-        "name": "Accessibility Strategy Needs Assessment - Home",
+        "name": "Streets: Capital Projects",
         "type": "section",
         "url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/streets-capital-projects",
         "section-name": "Accessibility Strategy Needs Assessment - Home",
@@ -70,7 +70,7 @@ const pages = [
         "section-url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/streets-capital-projects"
     },
     {
-        "name": "Accessibility Strategy Needs Assessment - Home",
+        "name": "Streets: Policy and Planning",
         "type": "section",
         "url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/streets-policy-and-planning",
         "section-name": "Accessibility Strategy Needs Assessment - Home",
@@ -112,7 +112,7 @@ const pages = [
         "section-url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/streets-policy-and-planning"
     },
     {
-        "name": "Accessibility Strategy Needs Assessment - Home",
+        "name": "Muni: Capital Projects",
         "type": "section",
         "url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/muni-capital-projects",
         "section-name": "Accessibility Strategy Needs Assessment - Home",
@@ -161,7 +161,7 @@ const pages = [
         "section-url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/muni-capital-projects"
     },
     {
-        "name": "Accessibility Strategy Needs Assessment - Home",
+        "name": "Muni: Service Plannng and Policy",
         "type": "section",
         "url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/muni-service-plannng-and-policy",
         "section-name": "Accessibility Strategy Needs Assessment - Home",
@@ -210,7 +210,7 @@ const pages = [
         "section-url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/muni-service-plannng-and-policy"
     },
     {
-        "name": "Accessibility Strategy Needs Assessment - Home",
+        "name": "Paratransit: Mobility Management",
         "type": "section",
         "url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/paratransit-mobility-management",
         "section-name": "Accessibility Strategy Needs Assessment - Home",
@@ -252,7 +252,7 @@ const pages = [
         "section-url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/paratransit-mobility-management"
     },
     {
-        "name": "Accessibility Strategy Needs Assessment - Home",
+        "name": "Paratransit: Capital",
         "type": "section",
         "url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/paratransit-capital",
         "section-name": "Accessibility Strategy Needs Assessment - Home",
@@ -280,7 +280,7 @@ const pages = [
         "section-url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/paratransit-capital"
     },
     {
-        "name": "Accessibility Strategy Needs Assessment - Home",
+        "name": "Paratransit: Financial",
         "type": "section",
         "url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/paratransit-financial",
         "section-name": "Accessibility Strategy Needs Assessment - Home",
@@ -315,7 +315,7 @@ const pages = [
         "section-url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/paratransit-financial"
     },
     {
-        "name": "Accessibility Strategy Needs Assessment - Home",
+        "name": "Paratransit: Eligibility and Enrollment",
         "type": "section",
         "url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/paratransit-eligibility-and-enrollment",
         "section-name": "Accessibility Strategy Needs Assessment - Home",
@@ -350,7 +350,7 @@ const pages = [
         "section-url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/paratransit-eligibility-and-enrollment"
     },
     {
-        "name": "Accessibility Strategy Needs Assessment - Home",
+        "name": "Paratransit: Service Performance",
         "type": "section",
         "url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/paratransit-service-performance",
         "section-name": "Accessibility Strategy Needs Assessment - Home",
@@ -434,6 +434,7 @@ const pages = [
         "section-url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/taxis"
     }
 ]
+
 // log current page
 console.log(window.location.href)
 
