@@ -442,4 +442,6 @@ const currentPage = pages.find(page => page.url === window.location.href);
 // if it is console.log the "name" property of the object
 if (currentPage) {
     console.log(currentPage.name);
+} else {
+    console.log('Page not found in array');
 }
