@@ -369,7 +369,7 @@ console.log("Current path:")
 console.log(path)
 
 // Check if the path is in the "pages" array
-const currentPage = pages.find(page => page.url === path);
+const currentPage = pages.find(page => page.URL === path);
 
 // if it is console.log the "name" property of the object
 if (currentPage) {
