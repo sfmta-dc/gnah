@@ -361,12 +361,12 @@ const pages = [
     }
 ]
 
-// log current page
-console.log("Logging current URL:")
-console.log(window.location.href)
-
 // Get URL and remove the domain name from the start of the URL
-const path = window.location.href.replace('https://www.sfmta.com', '');
+const path = window.location.href.replace('https://www.sfmta.com/', '');
+
+// Log identified path
+console.log("Current path:")
+console.log(path)
 
 // Check if the path is in the "pages" array
 const currentPage = pages.find(page => page.url === path);
