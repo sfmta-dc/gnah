@@ -365,10 +365,11 @@ const pages = [
 console.log("Logging current URL:")
 console.log(window.location.href)
 
+// Get URL and remove the domain name from the start of the URL
+const path = window.location.href.replace('https://www.sfmta.com', '');
 
-// Check if the URL the user is currrntly on is in the "url" property of any of the objects in the "pages" array
-
-const currentPage = pages.find(page => page.url === window.location.href);
+// Check if the path is in the "pages" array
+const currentPage = pages.find(page => page.url === path);
 
 // if it is console.log the "name" property of the object
 if (currentPage) {
