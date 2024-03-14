@@ -552,14 +552,24 @@ function main() {
 
     if (currentPage.type === 'page') {
         const asideElement = document.querySelector('aside');
-        let htmlString = ''
+        let htmlString = '';
 
         for (let i = 1; i < pages.length; i++) {
+            // create an li element
+            let li = document.createElement('li');
+            let a = document.createElement('a');
+
+            a.href = pages[i].url;
+            a.innerHTML = pages[i].name;
+
             if (currentPageIndex === i) {
-                htmlString += `<li><a style="text-decoration: underline;" href="${pages[i].url}">${pages[i].name}</a></li>`;
-            } else {
-                htmlString += `<li><a href="${pages[i].url}">${pages[i].name}</a></li>`;
+                a.style.textDecoration = 'underline';
             }
+            if (pages[i].type === 'page') {
+                li.style.marginLeft = '2rem';
+            }
+            // add this li to htmlString
+            htmlString += li.outerHTML;
         }
 
         if (asideElement) {
