@@ -1,7 +1,7 @@
 const pages = [
     {
         "name": "Accessibility Strategy Needs Assessment - Home",
-        "type": "section",
+        "type": "home",
         "url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024",
         "section-name": "",
         "section-url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024"
@@ -421,19 +421,93 @@ const pages = [
     }
 ]
 
-// // Get URL and remove the domain name from the start of the URL
-// const path = window.location.href.replace('https://www.sfmta.com/', '');
-
-// // Log identified path
-// console.log("Current path:")
-// console.log(path)
-
-// Check if the url is in the "pages" array
 const currentPage = pages.find(page => page.url === window.location.href);
 
-// if it is console.log the "name" property of the object
 if (currentPage) {
     console.log(currentPage.name);
 } else {
     console.log('Page not found in array');
+}
+
+// Store position of current page in array as a const
+const currentPageIndex = pages.findIndex(page => page.url === window.location.href);
+
+// Store previous and next pages as consts
+const previousPage = pages[currentPageIndex - 1];
+const nextPage = pages[currentPageIndex + 1];
+
+// Using the currentPageIndex, loop through the pages array and find the previous and next sections
+// Store the previous and next sections as consts
+let previousSection;
+let nextSection;
+
+for (let i = currentPageIndex; i >= 0; i--) {
+    if (pages[i].type === 'section') {
+        previousSection = pages[i];
+        break;
+    }
+}
+for (let i = currentPageIndex; i < pages.length; i++) {
+    if (pages[i].type === 'section') {
+        nextSection = pages[i];
+        break;
+    }
+}
+
+// Find the HTML element on the page for this breadcrumb ol:
+
+{/*
+    <ol class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li class="active">Accessibility Strategy Needs Assessment</li>
+    </ol>
+*/}
+
+const breadcrumbOrderedList = document.querySelector('.breadcrumb');
+
+// If the current page has a type of section or page, add a new list item to the breadcrumbOrderedList using the page name
+if (currentPage.type === 'section' || currentPage.type === 'page') {
+    const newBreadcrumbItem = document.createElement('li');
+    newBreadcrumbItem.innerHTML = `<a href="${currentPage['section-url']}">${currentPage['section-name']}</a>`;
+    breadcrumbOrderedList.appendChild(newBreadcrumbItem);
+}
+
+// If the currentPage has a type of section, find the HTML DIV element on the page that has the following two classes: region region-content
+// Check if it has a child element SECTION element
+// If it does not, provide a console.log message that says "No section found on this page"
+// If it does, add new SECTION element as the last child element to the DIV element with the following content:
+// A simple two column layout that uses inline CSS flex with navigation elements to the previous and next sections that uses the previousSection and nextSection lets
+
+if (currentPage.type === 'section') {
+    const regionContentDiv = document.querySelector('.region-content');
+    if (!regionContentDiv.querySelector('section')) {
+        console.log('No section found on this page');
+    } else {
+        const newSection = document.createElement('section');
+        newSection.innerHTML = `
+            <div style="display: flex; justify-content: space-between;">
+                <a href="${previousSection.url}">Previous Section</a>
+                <a href="${nextSection.url}">Next Section</a>
+            </div>
+        `;
+        regionContentDiv.appendChild(newSection);
+    }
+}
+
+// If the currentPage has a type of page, find the HTML ARTICLE element on the page that has the following class: node
+// If an article element is not found, provide a console.log message that says "No article found on this page"
+// If an article is found add a simple two column layout that uses inline CSS flex with navigation elements to the previous and next pages that uses the previousPage and nextPage consts
+
+if (currentPage.type === 'page') {
+    const nodeArticle = document.querySelector('.node');
+    if (!nodeArticle) {
+        console.log('No article found on this page');
+    } else {
+        nodeArticle.innerHTML = `
+            <div style="display: flex; justify-content: space-between;">
+                <a href="${previousPage.url}">Previous Page</a>
+                <a href="${nextPage.url}">Next Page</a>
+            </div>
+        `;
+    }
 }
