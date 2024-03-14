@@ -552,6 +552,14 @@ function main() {
 
     if (currentPage.type === 'page') {
         const asideElement = document.querySelector('aside');
+        // find a child DIV of this aside element. The DIV will have a class of "region region-sidebar-second"
+        // remove it from the DOM
+        if (asideElement) {
+            const regionSidebarSecond = asideElement.querySelector('.region-sidebar-second');
+            if (regionSidebarSecond) {
+                asideElement.removeChild(regionSidebarSecond);
+            }
+        }
         let htmlString = '';
 
         for (let i = 1; i < pages.length; i++) {
