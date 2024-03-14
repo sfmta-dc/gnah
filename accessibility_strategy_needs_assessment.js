@@ -576,6 +576,8 @@ function main() {
             if (pages[i].type === 'page') {
                 li.style.marginLeft = '2rem';
             }
+            // set the innerHTML of the li equal to the a element
+            li.innerHTML = a.outerHTML;
             // add this li to htmlString
             htmlString += li.outerHTML;
         }
@@ -583,13 +585,13 @@ function main() {
         if (asideElement) {
             const newSection = document.createElement('section');
             newSection.innerHTML = `
-                <h2 class="block-title">Accessibility Strategy Needs Assessment</h2>
-                <div class="view-content">
-                    <ul style="list-style: none; padding-left:2rem; line-height: 3rem;">
-                    ${htmlString}
-                    </ul>
-                </div>
-            `;
+            <h2 class="block-title">Accessibility Strategy Needs Assessment</h2>
+            <div class="view-content">
+                <ul style="list-style: none; padding-left:2rem; line-height: 3rem;">
+                ${htmlString}
+                </ul>
+            </div>
+        `;
             asideElement.appendChild(newSection);
         }
     }
