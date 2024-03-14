@@ -428,7 +428,7 @@ function main() {
     // const nextPage = pages[currentPageIndex + 1];
 
     const findPreviousSection = (pages, startIndex) => {
-        for (let i = startIndex; i >= 0; i--) {
+        for (let i = startIndex-1; i >= 0; i--) {
             if (pages[i].type === 'section' | pages[i].type === 'home') {
                 return pages[i];
             }
@@ -458,9 +458,8 @@ function main() {
     };
     const previousSectionBeforeParent = findPreviousSectionBeforeParent(pages, currentPageIndex);
 
-
     const findNextSection = (pages, startIndex) => {
-        for (let i = startIndex; i < pages.length; i++) {
+        for (let i = startIndex+1; i < pages.length; i++) {
             if (pages[i].type === 'section') {
                 return pages[i];
             }
@@ -530,7 +529,6 @@ function main() {
         breadcrumbOrderedList.insertBefore(newHomeItem, breadcrumbOrderedList.childNodes[1]);
     }
 
-
     // Navigation functionality
     if (currentPage.type === 'section') {
         const regionContentDiv = document.querySelector('.region-content');
@@ -575,4 +573,4 @@ function main() {
 }
 
 // wait 1000 ms then run main function
-setTimeout(main, 10);
+setTimeout(main, 500);
