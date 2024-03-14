@@ -437,6 +437,28 @@ function main() {
     };
     const previousSection = findPreviousSection(pages, currentPageIndex);
 
+    const findPreviousSectionBeforeParent = (pages, startIndex) => {
+        // First, find the direct parent section or home for the startIndex
+        let directParentIndex = -1;
+        for (let i = startIndex; i >= 0; i--) {
+            if (pages[i].type === 'section' || pages[i].type === 'home') {
+                directParentIndex = i;
+                break; // Stop at the first section or home found
+            }
+        }
+
+        // Now, find the section or home before the direct parent
+        for (let i = directParentIndex - 1; i >= 0; i--) {
+            if (pages[i].type === 'section' || pages[i].type === 'home') {
+                return pages[i];
+            }
+        }
+
+        return null; // Return null if no previous section or home is found before the parent
+    };
+    const previousSectionBeforeParent = findPreviousSectionBeforeParent(pages, currentPageIndex);
+
+
     const findNextSection = (pages, startIndex) => {
         for (let i = startIndex; i < pages.length; i++) {
             if (pages[i].type === 'section') {
@@ -447,31 +469,47 @@ function main() {
     };
     const nextSection = findNextSection(pages, currentPageIndex);
 
-    // creat function to find previous page within the same section
-    // if no previous page is found, return the section the page is in
-    const findPreviousPage = (pages, startIndex) => {
-        for (let i = startIndex-1; i >= 0; i--) {
-            console.log('startIndex:', startIndex);
-            console.log('i:', i);
-            if (pages[i].type === 'page') {
-                console.log('Its a page');
-                console.log(pages[i]);
-                return pages[i];
-            } else {
-                console.log('Not a page');
+    const findNextSectionAfterParent = (pages, startIndex) => {
+        // First, find the direct parent section or home for the startIndex
+        let directParentIndex = -1;
+        for (let i = startIndex; i < pages.length; i++) {
+            if (pages[i].type === 'section' || pages[i].type === 'home') {
+                directParentIndex = i;
+                break; // Stop at the first section or home found
             }
         }
-        return previousSection; // Return the section if no page is found
+
+        // Now, find the section or home after the direct parent
+        for (let i = directParentIndex + 1; i < pages.length; i++) {
+            if (pages[i].type === 'section' || pages[i].type === 'home') {
+                return pages[i];
+            }
+        }
+
+        return null; // Return null if no next section or home is found after the parent
+    };
+
+    const findPreviousPage = (pages, startIndex) => {
+        for (let i = startIndex - 1; i >= 0; i--) {
+            if (pages[i].type === "section") {
+                return previousSectionBeforeParent;
+            }
+            if (pages[i].type === 'page') {
+                return pages[i];
+            }
+        }
     };
     const previousPage = findPreviousPage(pages, currentPageIndex);
 
     const findNextPage = (pages, startIndex) => {
-        for (let i = startIndex+1; i < pages.length; i++) {
+        for (let i = startIndex + 1; i < pages.length; i++) {
+            if (pages[i].type === "section") {
+                return nextSection;
+            }
             if (pages[i].type === 'page') {
                 return pages[i];
             }
         }
-        return nextSection; // Return the section if no page is found
     };
     const nextPage = findNextPage(pages, currentPageIndex);
 
@@ -525,8 +563,9 @@ function main() {
 
             newSection.innerHTML = `
                 <div style="display: flex; justify-content: space-between;">
-                    <a href="${previousPage.url}">Previous Page</a>
-                    <a href="${nextPage.url}">Next Page</a>
+                    <a href="${previousPage.url}">${previousPage.type === 'page' ? 'Previous Page' : 'Previous Section'}</a>
+                    <a href="${nextPage.url}">${nextPage.type === 'page' ? 'Next Page' : 'Next Section'}</a>
+
                 </div>
             `;
             nodeArticle.appendChild(newSection);
@@ -536,4 +575,4 @@ function main() {
 }
 
 // wait 1000 ms then run main function
-setTimeout(main, 100);
+setTimeout(main, 10);
