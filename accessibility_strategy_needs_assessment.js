@@ -424,11 +424,9 @@ const pages = [
 function main() {
     const currentPage = pages.find(page => page.url === window.location.href);
     const currentPageIndex = pages.findIndex(page => page.url === window.location.href);
-    // const previousPage = pages[currentPageIndex - 1];
-    // const nextPage = pages[currentPageIndex + 1];
 
     const findPreviousSection = (pages, startIndex) => {
-        for (let i = startIndex-1; i >= 0; i--) {
+        for (let i = startIndex - 1; i >= 0; i--) {
             if (pages[i].type === 'section' | pages[i].type === 'home') {
                 return pages[i];
             }
@@ -459,7 +457,7 @@ function main() {
     const previousSectionBeforeParent = findPreviousSectionBeforeParent(pages, currentPageIndex);
 
     const findNextSection = (pages, startIndex) => {
-        for (let i = startIndex+1; i < pages.length; i++) {
+        for (let i = startIndex + 1; i < pages.length; i++) {
             if (pages[i].type === 'section') {
                 return pages[i];
             }
@@ -476,6 +474,7 @@ function main() {
             if (pages[i].type === 'page') {
                 return pages[i];
             }
+            return null;
         }
     };
     const previousPage = findPreviousPage(pages, currentPageIndex);
@@ -488,6 +487,7 @@ function main() {
             if (pages[i].type === 'page') {
                 return pages[i];
             }
+            return null;
         }
     };
     const nextPage = findNextPage(pages, currentPageIndex);
@@ -521,11 +521,11 @@ function main() {
             // console.log('Next Section for Navigation:', nextSection); // Log next section before using
             const newSection = document.createElement('section');
             newSection.innerHTML = `
-            <div style="display: flex; justify-content: space-between;">
-                <a href="${previousSection.url}">${previousSection.type === 'home' ? 'Home' : 'Previous Section'}</a>
-                ${nextSection ? `<a href="${nextSection.url}">Next Section</a>` : ''}
-            </div>
-            `;
+        <div style="display: flex; justify-content: space-between;">
+            <a href="${previousSection.url}">${previousSection.type === 'home' ? 'Home' : 'Previous Section'}</a>
+            ${nextSection ? `<a href="${nextSection.url}">Next Section</a>` : ''}
+        </div>
+        `;
             regionContentDiv.appendChild(newSection);
         }
     }
@@ -540,12 +540,12 @@ function main() {
             const newSection = document.createElement('section');
 
             newSection.innerHTML = `
-                <div style="display: flex; justify-content: space-between;">
-                    <a href="${previousPage.url}">${previousPage.type === 'page' ? 'Previous Page' : 'Previous Section'}</a>
-                    <a href="${nextPage.url}">${nextPage.type === 'page' ? 'Next Page' : 'Next Section'}</a>
+            <div style="display: flex; justify-content: space-between;">
+                ${previousPage ? `<a href="${previousPage.url}">${previousPage.type === 'page' ? 'Previous Page' : 'Previous Section'}</a>` : '<a href="https://www.sfmta.com/accessibility-strategy-needs-assessment-2024">Back to Home</a>'}
+                ${nextPage ? `<a href="${nextPage.url}">${nextPage.type === 'page' ? 'Next Page' : 'Next Section'}</a>` : '<a href="https://www.sfmta.com/accessibility-strategy-needs-assessment-2024">Back to Home</a>'}
 
-                </div>
-            `;
+            </div>
+        `;
             nodeArticle.appendChild(newSection);
         }
     }
@@ -585,13 +585,13 @@ function main() {
         if (asideElement) {
             const newSection = document.createElement('section');
             newSection.innerHTML = `
-            <h2 class="block-title">Accessibility Strategy Needs Assessment</h2>
-            <div class="view-content">
-                <ul style="list-style: none; padding-left:2rem; line-height: 3rem;">
-                ${htmlString}
-                </ul>
-            </div>
-        `;
+        <h2 class="block-title">Accessibility Strategy Needs Assessment</h2>
+        <div class="view-content">
+            <ul style="list-style: none; padding-left:2rem; line-height: 3rem;">
+            ${htmlString}
+            </ul>
+        </div>
+    `;
             asideElement.appendChild(newSection);
         }
     }
