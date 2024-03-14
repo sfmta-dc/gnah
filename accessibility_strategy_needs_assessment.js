@@ -421,108 +421,119 @@ const pages = [
     }
 ]
 
-const currentPage = pages.find(page => page.url === window.location.href);
+function main() {
+    const currentPage = pages.find(page => page.url === window.location.href);
+    const currentPageIndex = pages.findIndex(page => page.url === window.location.href);
+    // const previousPage = pages[currentPageIndex - 1];
+    // const nextPage = pages[currentPageIndex + 1];
 
-const currentPageIndex = pages.findIndex(page => page.url === window.location.href);
-console.log('Current Page Index:', currentPageIndex); // Log the index of the current page
-
-const previousPage = pages[currentPageIndex - 1];
-// console.log('Previous Page:', previousPage); // Log the previous page
-
-const nextPage = pages[currentPageIndex + 1];
-// console.log('Next Page:', nextPage); // Log the next page
-
-const findPreviousSection = (pages, startIndex) => {
-    for (let i = startIndex; i >= 0; i--) {
-        if (pages[i].type === 'section' | pages[i].type === 'home') {
-            return pages[i];
+    const findPreviousSection = (pages, startIndex) => {
+        for (let i = startIndex; i >= 0; i--) {
+            if (pages[i].type === 'section' | pages[i].type === 'home') {
+                return pages[i];
+            }
         }
-    }
-    return null; // Return null if no section is found
-};
+        return null; // Return null if no section is found
+    };
+    const previousSection = findPreviousSection(pages, currentPageIndex);
 
-const previousSection = findPreviousSection(pages, currentPageIndex);
-// console.log('Previous Section:', previousSection);
-
-const findNextSection = (pages, startIndex) => {
-    for (let i = startIndex; i < pages.length; i++) {
-        if (pages[i].type === 'section') {
-            return pages[i];
+    const findNextSection = (pages, startIndex) => {
+        for (let i = startIndex; i < pages.length; i++) {
+            if (pages[i].type === 'section') {
+                return pages[i];
+            }
         }
+        return null; // Return null if no section is found
+    };
+    const nextSection = findNextSection(pages, currentPageIndex);
+
+    // creat function to find previous page within the same section
+    // if no previous page is found, return the section the page is in
+    const findPreviousPage = (pages, startIndex) => {
+        for (let i = startIndex-1; i >= 0; i--) {
+            console.log('startIndex:', startIndex);
+            console.log('i:', i);
+            if (pages[i].type === 'page') {
+                console.log('Its a page');
+                console.log(pages[i]);
+                return pages[i];
+            } else {
+                console.log('Not a page');
+            }
+        }
+        return previousSection; // Return the section if no page is found
+    };
+    const previousPage = findPreviousPage(pages, currentPageIndex);
+
+    const findNextPage = (pages, startIndex) => {
+        for (let i = startIndex+1; i < pages.length; i++) {
+            if (pages[i].type === 'page') {
+                return pages[i];
+            }
+        }
+        return nextSection; // Return the section if no page is found
+    };
+    const nextPage = findNextPage(pages, currentPageIndex);
+
+    // Breadcrumb functionality
+    const breadcrumbOrderedList = document.querySelector('.breadcrumb');
+    if (currentPage.type === 'section') {
+        const newBreadcrumbItem = document.createElement('li');
+        newBreadcrumbItem.innerHTML = `<a href="${currentPage['section-url']}">${currentPage['section-name']}</a>`;
+        breadcrumbOrderedList.insertBefore(newBreadcrumbItem, breadcrumbOrderedList.childNodes[1]);
     }
-    return null; // Return null if no section is found
-};
 
-const nextSection = findNextSection(pages, currentPageIndex);
-// console.log('Next Section:', nextSection);
-
-
-
-
-
-
-
-const breadcrumbOrderedList = document.querySelector('.breadcrumb');
-// console.log('Breadcrumb Ordered List:', breadcrumbOrderedList); // Log the breadcrumb ordered list element
-
-// Before modifying breadcrumb based on currentPage
+    if (currentPage.type === 'page') {
+        const newBreadcrumbItem = document.createElement('li');
+        const newHomeItem = document.createElement('li');
+        newBreadcrumbItem.innerHTML = `<a href="${currentPage['section-url']}">${currentPage['section-name']}</a>`;
+        newHomeItem.innerHTML = `<a href="${previousSection['section-url']}">${previousSection['section-name']}</a>`;
+        breadcrumbOrderedList.insertBefore(newBreadcrumbItem, breadcrumbOrderedList.childNodes[1]);
+        breadcrumbOrderedList.insertBefore(newHomeItem, breadcrumbOrderedList.childNodes[1]);
+    }
 
 
-if (currentPage.type === 'section') {
-    const newBreadcrumbItem = document.createElement('li');
-    newBreadcrumbItem.innerHTML = `<a href="${currentPage['section-url']}">${currentPage['section-name']}</a>`;
-    breadcrumbOrderedList.insertBefore(newBreadcrumbItem, breadcrumbOrderedList.childNodes[1]);
-}
+    // Navigation functionality
+    if (currentPage.type === 'section') {
+        const regionContentDiv = document.querySelector('.region-content');
+        // console.log('Region Content Div:', regionContentDiv); // Log the region content DIV
 
-
-if (currentPage.type === 'page') {
-    // console.log('Current Page for Breadcrumb:', currentPage); // Log current page before using it for breadcrumb
-    const newBreadcrumbItem = document.createElement('li');
-    const newHomeItem = document.createElement('li');
-    newBreadcrumbItem.innerHTML = `<a href="${currentPage['section-url']}">${currentPage['section-name']}</a>`;
-    newHomeItem.innerHTML = `<a href="${pages[0].url}">${pages[0].name}</a>`;
-    breadcrumbOrderedList.insertBefore(newBreadcrumbItem, breadcrumbOrderedList.childNodes[1]);
-    breadcrumbOrderedList.insertBefore(newHomeItem, breadcrumbOrderedList.childNodes[1]);
-    // breadcrumbOrderedList.appendChild(newBreadcrumbItem);
-}
-
-
-
-
-if (currentPage.type === 'section') {
-    const regionContentDiv = document.querySelector('.region-content');
-    // console.log('Region Content Div:', regionContentDiv); // Log the region content DIV
-
-    if (!regionContentDiv.querySelector('section')) {
-        // console.log('No section found on this page');
-    } else {
-        // console.log('Previous Section for Navigation:', previousSection); // Log previous section before using
-        // console.log('Next Section for Navigation:', nextSection); // Log next section before using
-        const newSection = document.createElement('section');
-        newSection.innerHTML = `
+        if (!regionContentDiv.querySelector('section')) {
+            // console.log('No section found on this page');
+        } else {
+            // console.log('Previous Section for Navigation:', previousSection); // Log previous section before using
+            // console.log('Next Section for Navigation:', nextSection); // Log next section before using
+            const newSection = document.createElement('section');
+            newSection.innerHTML = `
             <div style="display: flex; justify-content: space-between;">
                 <a href="${previousSection.url}">Previous Section</a>
                 <a href="${nextSection.url}">Next Section</a>
             </div>
-        `;
-        regionContentDiv.appendChild(newSection);
+            `;
+            regionContentDiv.appendChild(newSection);
+        }
     }
+
+    if (currentPage.type === 'page') {
+        const nodeArticle = document.querySelector('.node');
+        // console.log('Node Article:', nodeArticle); // Log the node article
+
+        if (!nodeArticle) {
+            // console.log('No article found on this page');
+        } else {
+            const newSection = document.createElement('section');
+
+            newSection.innerHTML = `
+                <div style="display: flex; justify-content: space-between;">
+                    <a href="${previousPage.url}">Previous Page</a>
+                    <a href="${nextPage.url}">Next Page</a>
+                </div>
+            `;
+            nodeArticle.appendChild(newSection);
+        }
+    }
+
 }
 
-if (currentPage.type === 'page') {
-    const nodeArticle = document.querySelector('.node');
-    // console.log('Node Article:', nodeArticle); // Log the node article
-
-    if (!nodeArticle) {
-        // console.log('No article found on this page');
-    } else {
-        // console.log('Previous Page for Navigation:', previousPage); // Log previous page before using
-        // console.log('Next Page for Navigation:', nextPage); // Log next page before using
-        nodeArticle.innerHTML = `
-            <div style="display: flex; justify-content: space-between;">
-                <a href="${previousPage.url}">Previous Page</a>
-                <a href="${nextPage.url}">Next Page</a>
-            </div>
-        `;
-    }
-}
+// wait 1000 ms then run main function
+setTimeout(main, 100);

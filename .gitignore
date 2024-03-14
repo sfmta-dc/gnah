@@ -2,4 +2,5 @@
 
 *.py
 *.csv
+*.html
 output.js
