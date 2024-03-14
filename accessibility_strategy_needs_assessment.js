@@ -598,4 +598,5 @@ function main() {
 }
 
 // wait 1000 ms then run main function
-setTimeout(main, 500);
+// setTimeout(main, 200);
+main();
