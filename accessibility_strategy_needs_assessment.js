@@ -523,7 +523,7 @@ function main() {
             newSection.innerHTML = `
             <div style="display: flex; justify-content: space-between;">
                 <a href="${previousSection.url}">${previousSection.type === 'home' ? 'Home' : 'Previous Section'}</a>
-                <a href="${nextSection.url}">Next Section</a>
+                ${nextSection ? `<a href="${nextSection.url}">Next Section</a>` : ''}
             </div>
             `;
             regionContentDiv.appendChild(newSection);
