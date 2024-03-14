@@ -438,24 +438,32 @@ console.log('Previous Page:', previousPage); // Log the previous page
 const nextPage = pages[currentPageIndex + 1];
 console.log('Next Page:', nextPage); // Log the next page
 
-let previousSection;
-let nextSection;
 
-for (let i = currentPageIndex; i >= 0; i--) {
-    if (pages[i].type === 'section') {
-        previousSection = pages[i];
-        break;
-    }
-}
-console.log('Previous Section:', previousSection); // Log the previous section
 
-for (let i = currentPageIndex; i < pages.length; i++) {
-    if (pages[i].type === 'section') {
-        nextSection = pages[i];
-        break;
+const findPreviousSection = (pages, startIndex) => {
+    for (let i = startIndex; i >= 0; i--) {
+        if (pages[i].type === 'section') {
+            return pages[i];
+        }
     }
-}
-console.log('Next Section:', nextSection); // Log the next section
+    return null; // Return null if no section is found
+};
+
+const previousSection = findPreviousSection(pages, currentPageIndex);
+console.log('Previous Section:', previousSection);
+
+const findNextSection = (pages, startIndex) => {
+    for (let i = startIndex; i < pages.length; i++) {
+        if (pages[i].type === 'section') {
+            return pages[i];
+        }
+    }
+    return null; // Return null if no section is found
+};
+
+const nextSection = findNextSection(pages, currentPageIndex);
+console.log('Next Section:', nextSection);
+
 
 const breadcrumbOrderedList = document.querySelector('.breadcrumb');
 console.log('Breadcrumb Ordered List:', breadcrumbOrderedList); // Log the breadcrumb ordered list element
