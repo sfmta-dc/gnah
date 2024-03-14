@@ -543,7 +543,6 @@ function main() {
             <div style="display: flex; justify-content: space-between;">
                 ${previousPage ? `<a href="${previousPage.url}">${previousPage.type === 'page' ? 'Previous Page' : 'Previous Section'}</a>` : '<a href="https://www.sfmta.com/accessibility-strategy-needs-assessment-2024">Back to Home</a>'}
                 ${nextPage ? `<a href="${nextPage.url}">${nextPage.type === 'page' ? 'Next Page' : 'Next Section'}</a>` : '<a href="https://www.sfmta.com/accessibility-strategy-needs-assessment-2024">Back to Home</a>'}
-
             </div>
         `;
             nodeArticle.appendChild(newSection);
