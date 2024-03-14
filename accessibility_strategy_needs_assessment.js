@@ -468,25 +468,25 @@ function main() {
     };
     const nextSection = findNextSection(pages, currentPageIndex);
 
-    const findNextSectionAfterParent = (pages, startIndex) => {
-        // First, find the direct parent section or home for the startIndex
-        let directParentIndex = -1;
-        for (let i = startIndex; i < pages.length; i++) {
-            if (pages[i].type === 'section' || pages[i].type === 'home') {
-                directParentIndex = i;
-                break; // Stop at the first section or home found
-            }
-        }
+    // const findNextSectionAfterParent = (pages, startIndex) => {
+    //     // First, find the direct parent section or home for the startIndex
+    //     let directParentIndex = -1;
+    //     for (let i = startIndex; i < pages.length; i++) {
+    //         if (pages[i].type === 'section' || pages[i].type === 'home') {
+    //             directParentIndex = i;
+    //             break; // Stop at the first section or home found
+    //         }
+    //     }
 
-        // Now, find the section or home after the direct parent
-        for (let i = directParentIndex + 1; i < pages.length; i++) {
-            if (pages[i].type === 'section' || pages[i].type === 'home') {
-                return pages[i];
-            }
-        }
+    //     // Now, find the section or home after the direct parent
+    //     for (let i = directParentIndex + 1; i < pages.length; i++) {
+    //         if (pages[i].type === 'section' || pages[i].type === 'home') {
+    //             return pages[i];
+    //         }
+    //     }
 
-        return null; // Return null if no next section or home is found after the parent
-    };
+    //     return null; // Return null if no next section or home is found after the parent
+    // };
 
     const findPreviousPage = (pages, startIndex) => {
         for (let i = startIndex - 1; i >= 0; i--) {
