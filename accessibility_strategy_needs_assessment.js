@@ -429,15 +429,15 @@ if (currentPage) {
     console.log('Page not found in array');
 }
 
-// Store position of current page in array as a const
 const currentPageIndex = pages.findIndex(page => page.url === window.location.href);
+console.log('Current Page Index:', currentPageIndex); // Log the index of the current page
 
-// Store previous and next pages as consts
 const previousPage = pages[currentPageIndex - 1];
-const nextPage = pages[currentPageIndex + 1];
+console.log('Previous Page:', previousPage); // Log the previous page
 
-// Using the currentPageIndex, loop through the pages array and find the previous and next sections
-// Store the previous and next sections as consts
+const nextPage = pages[currentPageIndex + 1];
+console.log('Next Page:', nextPage); // Log the next page
+
 let previousSection;
 let nextSection;
 
@@ -447,42 +447,36 @@ for (let i = currentPageIndex; i >= 0; i--) {
         break;
     }
 }
+console.log('Previous Section:', previousSection); // Log the previous section
+
 for (let i = currentPageIndex; i < pages.length; i++) {
     if (pages[i].type === 'section') {
         nextSection = pages[i];
         break;
     }
 }
-
-// Find the HTML element on the page for this breadcrumb ol:
-
-{/*
-    <ol class="breadcrumb">
-        <li><a href="/">Home</a></li>
-        <li class="active">Accessibility Strategy Needs Assessment</li>
-    </ol>
-*/}
+console.log('Next Section:', nextSection); // Log the next section
 
 const breadcrumbOrderedList = document.querySelector('.breadcrumb');
+console.log('Breadcrumb Ordered List:', breadcrumbOrderedList); // Log the breadcrumb ordered list element
 
-// If the current page has a type of section or page, add a new list item to the breadcrumbOrderedList using the page name
+// Before modifying breadcrumb based on currentPage
 if (currentPage.type === 'section' || currentPage.type === 'page') {
+    console.log('Current Page for Breadcrumb:', currentPage); // Log current page before using it for breadcrumb
     const newBreadcrumbItem = document.createElement('li');
     newBreadcrumbItem.innerHTML = `<a href="${currentPage['section-url']}">${currentPage['section-name']}</a>`;
     breadcrumbOrderedList.appendChild(newBreadcrumbItem);
 }
 
-// If the currentPage has a type of section, find the HTML DIV element on the page that has the following two classes: region region-content
-// Check if it has a child element SECTION element
-// If it does not, provide a console.log message that says "No section found on this page"
-// If it does, add new SECTION element as the last child element to the DIV element with the following content:
-// A simple two column layout that uses inline CSS flex with navigation elements to the previous and next sections that uses the previousSection and nextSection lets
-
 if (currentPage.type === 'section') {
     const regionContentDiv = document.querySelector('.region-content');
+    console.log('Region Content Div:', regionContentDiv); // Log the region content DIV
+
     if (!regionContentDiv.querySelector('section')) {
         console.log('No section found on this page');
     } else {
+        console.log('Previous Section for Navigation:', previousSection); // Log previous section before using
+        console.log('Next Section for Navigation:', nextSection); // Log next section before using
         const newSection = document.createElement('section');
         newSection.innerHTML = `
             <div style="display: flex; justify-content: space-between;">
@@ -494,15 +488,15 @@ if (currentPage.type === 'section') {
     }
 }
 
-// If the currentPage has a type of page, find the HTML ARTICLE element on the page that has the following class: node
-// If an article element is not found, provide a console.log message that says "No article found on this page"
-// If an article is found add a simple two column layout that uses inline CSS flex with navigation elements to the previous and next pages that uses the previousPage and nextPage consts
-
 if (currentPage.type === 'page') {
     const nodeArticle = document.querySelector('.node');
+    console.log('Node Article:', nodeArticle); // Log the node article
+
     if (!nodeArticle) {
         console.log('No article found on this page');
     } else {
+        console.log('Previous Page for Navigation:', previousPage); // Log previous page before using
+        console.log('Next Page for Navigation:', nextPage); // Log next page before using
         nodeArticle.innerHTML = `
             <div style="display: flex; justify-content: space-between;">
                 <a href="${previousPage.url}">Previous Page</a>
