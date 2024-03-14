@@ -522,7 +522,7 @@ function main() {
             const newSection = document.createElement('section');
             newSection.innerHTML = `
             <div style="display: flex; justify-content: space-between;">
-                <a href="${previousSection.url}">Previous Section</a>
+                <a href="${previousSection.url}">${previousSection.type === 'home' ? 'Home' : 'Previous Section'}</a>
                 <a href="${nextSection.url}">Next Section</a>
             </div>
             `;
