@@ -568,6 +568,10 @@ function main() {
             let li = document.createElement('li');
             let a = document.createElement('a');
 
+            // set margin-top and margin bottom to .75rem
+            li.style.marginTop = '.75rem';
+            li.style.marginBottom = '.75rem';
+
             a.href = pages[i].url;
             a.innerHTML = pages[i].name;
 
@@ -586,15 +590,36 @@ function main() {
         if (asideElement) {
             const newSection = document.createElement('section');
             newSection.innerHTML = `
-        <h2 class="block-title">Accessibility Strategy Needs Assessment</h2>
-        <div class="view-content">
-            <ul style="list-style: none; padding-left:2rem; line-height: 3rem;">
-            ${htmlString}
-            </ul>
-        </div>
-    `;
+                <h2 class="block-title">
+                    <a href="https://www.sfmta.com/accessibility-strategy-needs-assessment-2024">Accessibility Strategy Needs Assessment</a>
+                </h2>
+                <div class="view-content">
+                    <ul style="list-style: none; padding-left:2rem;">
+                    ${htmlString}
+                    </ul>
+                </div>
+            `;
             asideElement.appendChild(newSection);
         }
+        // create const with the direct parent of the aside element
+        const asideParent = asideElement.parentElement;
+        //add an ID to it of: custom-row-id-2376g3279
+        asideParent.id = 'custom-row-id-2376g3279';
+
+        //insert some custom css into a new <style> tag inside the <head> of the document
+        const style = document.createElement('style');
+        style.innerHTML = `
+        @media (min-width: 992px) {
+            #custom-row-id-2376g3279 {
+              display: flex;
+              flex-wrap: wrap;
+            }
+            #custom-row-id-2376g3279 > .col-sm-4[role="complementary"] {
+              order: -1;
+            }
+          }`
+        document.head.appendChild(style);
+
     }
 
 }
