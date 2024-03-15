@@ -591,7 +591,7 @@ function main() {
             const newSection = document.createElement('section');
             newSection.innerHTML = `
                 <h2 class="block-title">
-                    <a href="https://www.sfmta.com/accessibility-strategy-needs-assessment-2024">Accessibility Strategy Needs Assessment</a>
+                    <a id="heading-id-12iuiu42" style="color:white;" href="https://www.sfmta.com/accessibility-strategy-needs-assessment-2024">Accessibility Strategy Needs Assessment</a>
                 </h2>
                 <div class="view-content">
                     <ul style="list-style: none; padding-left:2rem;">
@@ -609,6 +609,12 @@ function main() {
         //insert some custom css into a new <style> tag inside the <head> of the document
         const style = document.createElement('style');
         style.innerHTML = `
+        #heading-id-12iuiu42 {
+            color: white;
+        }
+        #heading-id-12iuiu42:hover {
+            color: white;
+        }
         @media (min-width: 992px) {
             #custom-row-id-2376g3279 {
               display: flex;
