@@ -563,34 +563,34 @@ function main() {
         } else {
             // create a const that finds a div with a class row which is inside a div with class main-container which is a direct child of the body element
             const rowDiv = document.body.querySelector('div.main-container > div.row');
-        
+
             // find the section element which is the child of the row div
             const sectionElement = rowDiv.querySelector('section');
-        
+
             // The section element will have a class name of col-sm-12. Remove that class and add a new one: col-sm-8
             sectionElement.classList.remove('col-sm-12');
             sectionElement.classList.add('col-sm-8');
-            
+
             let newAside = document.createElement('aside');
             // add the class col-sm-4 to the aside element
             newAside.classList.add('col-sm-4');
             // add the role complementary to the aside element
             newAside.setAttribute('role', 'complementary');
-        
+
             let newDivItem = document.createElement('div');
             // add the two classes "region region-sidebar-second" to the newDivItem
             newDivItem.classList.add('region', 'region-sidebar-second');
-        
+
             // set the innerHTML of the newAside equal to the newDivItem
             // Since you want to append the div as an element and not HTML, we'll append the newDivItem as a child
             newAside.appendChild(newDivItem);
-        
+
             // Add this new aside element inside the div row as a sibling to the sectionElement. The newAside comes just after the sectionElement.
             sectionElement.insertAdjacentElement('afterend', newAside);
 
             setTimeout(sidebar(currentPageIndex), 25);
         }
-        
+
     }
 
 }
@@ -671,6 +671,15 @@ function sidebar(currentPageIndex) {
         }
 
         @media (min-width: 768px) {
+
+            #custom-row-id-2376g3279 {
+                display: flex;
+                flex-wrap: wrap;
+            }
+                #custom-row-id-2376g3279 > .col-sm-4[role="complementary"] {
+                order: -1;
+            }
+                
             #custom-row-id-2376g3279 section:first-of-type {
                 width: 66.6%!important;
 
@@ -681,13 +690,6 @@ function sidebar(currentPageIndex) {
         }
 
         @media (min-width: 992px) {
-            #custom-row-id-2376g3279 {
-              display: flex;
-              flex-wrap: wrap;
-            }
-            #custom-row-id-2376g3279 > .col-sm-4[role="complementary"] {
-              order: -1;
-            }
           }
         `
     document.head.appendChild(style);
