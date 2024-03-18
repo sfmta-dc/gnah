@@ -587,6 +587,8 @@ function main() {
         
             // Add this new aside element inside the div row as a sibling to the sectionElement. The newAside comes just after the sectionElement.
             sectionElement.insertAdjacentElement('afterend', newAside);
+
+            setTimeout(sidebar, 25);
         }
         
     }
