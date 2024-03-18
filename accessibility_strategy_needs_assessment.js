@@ -664,13 +664,13 @@ function sidebar(currentPageIndex) {
 
         @media (min-width: 768px) {
             #custom-row-id-2376g3279 section {
-                width: 66.5%;
-                position: relative;
+                width: 66.6%!important;
+                position: relative!important;
 
             }
             #custom-row-id-2376g3279 aside {
-                width: 33.2%;
-                position: relative;
+                width: 33.3%!important;
+                position: relative!important;
             }
         }
 
