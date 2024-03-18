@@ -552,14 +552,14 @@ function main() {
     }
 
     if (currentPage.type === 'page') {
-        sidebar();
+        sidebar(currentPageIndex);
     }
 
     if (currentPage.type === 'section') {
         //
         const asideElementStatus = document.querySelector('aside');
         if (asideElementStatus) {
-            sidebar();
+            sidebar(currentPageIndex);
         } else {
             // create a const that finds a div with a class row which is inside a div with class main-container which is a direct child of the body element
             const rowDiv = document.body.querySelector('div.main-container > div.row');
@@ -588,14 +588,14 @@ function main() {
             // Add this new aside element inside the div row as a sibling to the sectionElement. The newAside comes just after the sectionElement.
             sectionElement.insertAdjacentElement('afterend', newAside);
 
-            setTimeout(sidebar, 25);
+            setTimeout(sidebar(currentPageIndex), 25);
         }
         
     }
 
 }
 
-function sidebar() {
+function sidebar(currentPageIndex) {
     const asideElement = document.querySelector('aside');
     // find a child DIV of this aside element. The DIV will have a class of "region region-sidebar-second"
     // remove it from the DOM
