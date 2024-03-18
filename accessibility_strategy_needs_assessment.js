@@ -661,6 +661,19 @@ function sidebar(currentPageIndex) {
         #heading-id-12iuiu42:hover {
             color: white;
         }
+
+        @media (min-width: 768px) {
+            #custom-row-id-2376g3279 section {
+                width: 66.5%;
+                position: relative;
+
+            }
+            #custom-row-id-2376g3279 aside {
+                width: 33.2%;
+                position: relative;
+            }
+        }
+
         @media (min-width: 992px) {
             #custom-row-id-2376g3279 {
               display: flex;
@@ -669,7 +682,8 @@ function sidebar(currentPageIndex) {
             #custom-row-id-2376g3279 > .col-sm-4[role="complementary"] {
               order: -1;
             }
-          }`
+          }
+        `
     document.head.appendChild(style);
 
 }
