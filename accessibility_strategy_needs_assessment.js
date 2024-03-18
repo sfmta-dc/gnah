@@ -663,12 +663,12 @@ function sidebar(currentPageIndex) {
         }
 
         @media (min-width: 768px) {
-            #custom-row-id-2376g3279 section {
+            #custom-row-id-2376g3279 section:first-of-type {
                 width: 66.6%!important;
                 position: relative!important;
 
             }
-            #custom-row-id-2376g3279 aside {
+            #custom-row-id-2376g3279 aside:first-of-type {
                 width: 33.3%!important;
                 position: relative!important;
             }
