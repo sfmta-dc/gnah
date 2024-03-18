@@ -680,13 +680,14 @@ function sidebar(currentPageIndex) {
                 order: -1;
             }
                 
-            #custom-row-id-2376g3279 section:first-of-type {
+            #custom-row-id-2376g3279 > section:first-of-type {
                 width: 66.6%!important;
-
             }
-            #custom-row-id-2376g3279 aside:first-of-type {
+            
+            #custom-row-id-2376g3279 > aside:first-of-type {
                 width: 33.3%!important;
             }
+            
         }
 
         @media (min-width: 992px) {
