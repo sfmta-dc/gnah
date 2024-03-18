@@ -552,44 +552,86 @@ function main() {
     }
 
     if (currentPage.type === 'page') {
-        const asideElement = document.querySelector('aside');
-        // find a child DIV of this aside element. The DIV will have a class of "region region-sidebar-second"
-        // remove it from the DOM
-        if (asideElement) {
-            const regionSidebarSecond = asideElement.querySelector('.region-sidebar-second');
-            if (regionSidebarSecond) {
-                asideElement.removeChild(regionSidebarSecond);
-            }
+        sidebar();
+    }
+
+    if (currentPage.type === 'section') {
+        //
+        const asideElementStatus = document.querySelector('aside');
+        if (asideElementStatus) {
+            sidebar();
+        } else {
+            // create a const that finds a div with a class row which is inside a div with class main-container which is a direct child of the body element
+            const rowDiv = document.body.querySelector('div.main-container > div.row');
+        
+            // find the section element which is the child of the row div
+            const sectionElement = rowDiv.querySelector('section');
+        
+            // The section element will have a class name of col-sm-12. Remove that class and add a new one: col-sm-8
+            sectionElement.classList.remove('col-sm-12');
+            sectionElement.classList.add('col-sm-8');
+            
+            let newAside = document.createElement('aside');
+            // add the class col-sm-4 to the aside element
+            newAside.classList.add('col-sm-4');
+            // add the role complementary to the aside element
+            newAside.setAttribute('role', 'complementary');
+        
+            let newDivItem = document.createElement('div');
+            // add the two classes "region region-sidebar-second" to the newDivItem
+            newDivItem.classList.add('region', 'region-sidebar-second');
+        
+            // set the innerHTML of the newAside equal to the newDivItem
+            // Since you want to append the div as an element and not HTML, we'll append the newDivItem as a child
+            newAside.appendChild(newDivItem);
+        
+            // Add this new aside element inside the div row as a sibling to the sectionElement. The newAside comes just after the sectionElement.
+            sectionElement.insertAdjacentElement('afterend', newAside);
         }
-        let htmlString = '';
+        
+    }
 
-        for (let i = 1; i < pages.length; i++) {
-            // create an li element
-            let li = document.createElement('li');
-            let a = document.createElement('a');
+}
 
-            // set margin-top and margin bottom to .75rem
-            li.style.marginTop = '.75rem';
-            li.style.marginBottom = '.75rem';
-
-            a.href = pages[i].url;
-            a.innerHTML = pages[i].name;
-
-            if (currentPageIndex === i) {
-                a.style.textDecoration = 'underline';
-            }
-            if (pages[i].type === 'page') {
-                li.style.marginLeft = '2rem';
-            }
-            // set the innerHTML of the li equal to the a element
-            li.innerHTML = a.outerHTML;
-            // add this li to htmlString
-            htmlString += li.outerHTML;
+function sidebar() {
+    const asideElement = document.querySelector('aside');
+    // find a child DIV of this aside element. The DIV will have a class of "region region-sidebar-second"
+    // remove it from the DOM
+    if (asideElement) {
+        const regionSidebarSecond = asideElement.querySelector('.region-sidebar-second');
+        if (regionSidebarSecond) {
+            asideElement.removeChild(regionSidebarSecond);
         }
+    }
+    let htmlString = '';
 
-        if (asideElement) {
-            const newSection = document.createElement('section');
-            newSection.innerHTML = `
+    for (let i = 1; i < pages.length; i++) {
+        // create an li element
+        let li = document.createElement('li');
+        let a = document.createElement('a');
+
+        // set margin-top and margin bottom to .75rem
+        li.style.marginTop = '.75rem';
+        li.style.marginBottom = '.75rem';
+
+        a.href = pages[i].url;
+        a.innerHTML = pages[i].name;
+
+        if (currentPageIndex === i) {
+            a.style.textDecoration = 'underline';
+        }
+        if (pages[i].type === 'page') {
+            li.style.marginLeft = '2rem';
+        }
+        // set the innerHTML of the li equal to the a element
+        li.innerHTML = a.outerHTML;
+        // add this li to htmlString
+        htmlString += li.outerHTML;
+    }
+
+    if (asideElement) {
+        const newSection = document.createElement('section');
+        newSection.innerHTML = `
                 <h2 class="block-title">
                     <a id="heading-id-12iuiu42" style="color:white;" href="https://www.sfmta.com/accessibility-strategy-needs-assessment-2024">Accessibility Strategy Needs Assessment</a>
                 </h2>
@@ -599,16 +641,18 @@ function main() {
                     </ul>
                 </div>
             `;
-            asideElement.appendChild(newSection);
-        }
-        // create const with the direct parent of the aside element
-        const asideParent = asideElement.parentElement;
-        //add an ID to it of: custom-row-id-2376g3279
-        asideParent.id = 'custom-row-id-2376g3279';
+        asideElement.appendChild(newSection);
+    }
 
-        //insert some custom css into a new <style> tag inside the <head> of the document
-        const style = document.createElement('style');
-        style.innerHTML = `
+    // create const with the direct parent of the aside element
+    const asideParent = asideElement.parentElement;
+
+    //add an ID to it of: custom-row-id-2376g3279
+    asideParent.id = 'custom-row-id-2376g3279';
+
+    //insert some custom css into a new <style> tag inside the <head> of the document
+    const style = document.createElement('style');
+    style.innerHTML = `
         #heading-id-12iuiu42 {
             color: white;
         }
@@ -624,9 +668,7 @@ function main() {
               order: -1;
             }
           }`
-        document.head.appendChild(style);
-
-    }
+    document.head.appendChild(style);
 
 }
 
