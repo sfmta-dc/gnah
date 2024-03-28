@@ -80,9 +80,9 @@ const pages = [
         "section-url": "https://www.sfmta.com/blog/celebrate-women-trades-muni-and-learn-how-work-their-fields"
     },
     {
-        "name": "Power System Operator - Meet ess Goldworthy",
+        "name": "Power System Operator - Meet ess Goldsworthy",
         "job-title": "Power System Operator",
-        "person-name": "ess Goldworthy",
+        "person-name": "ess Goldsworthy",
         "type": "page",
         "url": "https://www.sfmta.com/sfmta-career-center/women-in-the-trades-sfmta/power-system-operator",
         "img": "https://www.sfmta.com/sites/default/files/teaser-images/2024/03/powersystemoperator_essgoldworthy_headerimage.jpg",
