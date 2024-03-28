@@ -1,6 +1,8 @@
 const pages = [
     {
-        "name": "Automotive Service Worker – Meet Nicole Humphrey",
+        "name": "Automotive Service Worker - Meet Nicole Humphrey",
+        "job-title": "Automotive Service Worker",
+        "person-name": "Nicole Humphrey",
         "type": "page",
         "url": "https://www.sfmta.com/sfmta-career-center/women-in-the-trades-sfmta/automotive-service-worker",
         "img": "https://www.sfmta.com/sites/default/files/teaser-images/2024/03/automotive_service_worker_nicolehumphrey_headerimage.jpg",
@@ -8,7 +10,9 @@ const pages = [
         "section-url": "https://www.sfmta.com/blog/celebrate-women-trades-muni-and-learn-how-work-their-fields"
     },
     {
-        "name": "Contract Manager – Meet Katherine Kwok",
+        "name": "Contract Manager - Meet Katherine Kwok",
+        "job-title": "Contract Manager",
+        "person-name": "Katherine Kwok",
         "type": "page",
         "url": "https://www.sfmta.com/sfmta-career-center/women-in-the-trades-sfmta/contract-manager",
         "img": "https://www.sfmta.com/sites/default/files/teaser-images/2024/03/analyst_kat_kwok_header_image.jpg",
@@ -16,7 +20,9 @@ const pages = [
         "section-url": "https://www.sfmta.com/blog/celebrate-women-trades-muni-and-learn-how-work-their-fields"
     },
     {
-        "name": "Engineer / Project Manager – Meet Becky Chen",
+        "name": "Engineer / Project Manager - Meet Becky Chen",
+        "job-title": "Engineer / Project Manager",
+        "person-name": "Becky Chen",
         "type": "page",
         "url": "https://www.sfmta.com/sfmta-career-center/women-in-the-trades-sfmta/engineer-project-manager",
         "img": "https://www.sfmta.com/sites/default/files/teaser-images/2024/03/engineer-project-manager-becky-chen-header.jpg",
@@ -24,7 +30,9 @@ const pages = [
         "section-url": "https://www.sfmta.com/blog/celebrate-women-trades-muni-and-learn-how-work-their-fields"
     },
     {
-        "name": "Maintenance Machinist (Apprentice) – Meet Brittany McMartin",
+        "name": "Machinist Apprentice - Meet Brittany McMartin",
+        "job-title": "Machinist Apprentice",
+        "person-name": "Brittany McMartin",
         "type": "page",
         "url": "https://www.sfmta.com/sfmta-career-center/women-in-the-trades-sfmta/maintenance-machinist-apprentice",
         "img": "https://www.sfmta.com/sites/default/files/teaser-images/2024/03/apprenticemachinist_brittanymcmartin_headerimage.jpg",
@@ -32,7 +40,9 @@ const pages = [
         "section-url": "https://www.sfmta.com/blog/celebrate-women-trades-muni-and-learn-how-work-their-fields"
     },
     {
-        "name": "Mechanic – Meet Jeena Villamor",
+        "name": "Mechanic - Meet Jeena Villamor",
+        "job-title": "Mechanic",
+        "person-name": "Jeena Villamor",
         "type": "page",
         "url": "https://www.sfmta.com/sfmta-career-center/women-in-the-trades-sfmta/mechanic-buses",
         "img": "https://www.sfmta.com/sites/default/files/teaser-images/2024/03/mechanic_jeena_villamor_header_image_0.jpg",
@@ -40,7 +50,9 @@ const pages = [
         "section-url": "https://www.sfmta.com/blog/celebrate-women-trades-muni-and-learn-how-work-their-fields"
     },
     {
-        "name": "Mechanic – Jenny Keosaat",
+        "name": "Mechanic - Jenny Keosaat",
+        "job-title": "Mechanic",
+        "person-name": "Jenny Keosaat",
         "type": "page",
         "url": "https://www.sfmta.com/sfmta-career-center/women-in-the-trades-sfmta/mechanic-historic-streetcars",
         "img": "https://www.sfmta.com/sites/default/files/teaser-images/2024/03/mechanic_jenny_keosaat_header_image.jpg",
@@ -48,7 +60,9 @@ const pages = [
         "section-url": "https://www.sfmta.com/blog/celebrate-women-trades-muni-and-learn-how-work-their-fields"
     },
     {
-        "name": "Parts Storekeeper – Meet Evelyn Cotton",
+        "name": "Parts Storekeeper - Meet Evelyn Cotton",
+        "job-title": "Parts Storekeeper",
+        "person-name": "Evelyn Cotton",
         "type": "page",
         "url": "https://www.sfmta.com/sfmta-career-center/women-in-the-trades-sfmta/parts-storekeeper",
         "img": "https://www.sfmta.com/sites/default/files/teaser-images/2024/03/partsstorekeeper_evelyn_cotton_header_image.jpg",
@@ -56,7 +70,9 @@ const pages = [
         "section-url": "https://www.sfmta.com/blog/celebrate-women-trades-muni-and-learn-how-work-their-fields"
     },
     {
-        "name": "Parts Storekeeper (Supervisor) -- Meet Deneitra Henry",
+        "name": "Parts Storekeeper Supervisor - Meet Deneitra Henry",
+        "job-title": "Parts Storekeeper Supervisor",
+        "person-name": "Deneitra Henry",
         "type": "page",
         "url": "https://www.sfmta.com/sfmta-career-center/women-in-the-trades-sfmta/parts-storekeeper-supervisor",
         "img": "https://www.sfmta.com/sites/default/files/teaser-images/2024/03/partsstorekeepersupervisor_deneitrahenry_headerimage.jpg",
@@ -64,7 +80,9 @@ const pages = [
         "section-url": "https://www.sfmta.com/blog/celebrate-women-trades-muni-and-learn-how-work-their-fields"
     },
     {
-        "name": "Power System Operator -- Meet ess Goldworthy",
+        "name": "Power System Operator - Meet ess Goldworthy",
+        "job-title": "Power System Operator",
+        "person-name": "ess Goldworthy",
         "type": "page",
         "url": "https://www.sfmta.com/sfmta-career-center/women-in-the-trades-sfmta/power-system-operator",
         "img": "https://www.sfmta.com/sites/default/files/teaser-images/2024/03/powersystemoperator_essgoldworthy_headerimage.jpg",
@@ -72,7 +90,9 @@ const pages = [
         "section-url": "https://www.sfmta.com/blog/celebrate-women-trades-muni-and-learn-how-work-their-fields"
     },
     {
-        "name": "Transit Car Cleaner – Meet Trina Dixon",
+        "name": "Transit Car Cleaner - Meet Trina Dixon",
+        "job-title": "Transit Car Cleaner",
+        "person-name": "Trina Dixon",
         "type": "page",
         "url": "https://www.sfmta.com/sfmta-career-center/women-in-the-trades-sfmta/transit-car-cleaner",
         "img": "https://www.sfmta.com/sites/default/files/teaser-images/2024/03/transitcarcleaner_trina_dixon_-_header_image.jpg",
@@ -104,8 +124,6 @@ function main() {
 
 function sidebar(currentPageIndex) {
     const asideElement = document.querySelector('aside');
-    // find a child DIV of this aside element. The DIV will have a class of "region region-sidebar-second"
-    // remove it from the DOM
     if (asideElement) {
         const regionSidebarSecond = asideElement.querySelector('.region-sidebar-second');
         if (regionSidebarSecond) {
@@ -114,94 +132,35 @@ function sidebar(currentPageIndex) {
     }
     let htmlString = '';
 
-    for (let i = 1; i < pages.length; i++) {
-        // create an li element
-        let li = document.createElement('li');
-        let a = document.createElement('a');
-
-        // set margin-top and margin bottom to .75rem
-        li.style.marginTop = '.75rem';
-        li.style.marginBottom = '.75rem';
-
-        a.href = pages[i].url;
-        a.innerHTML = pages[i].name;
-
-        if (currentPageIndex === i) {
-            a.style.textDecoration = 'underline';
+    pages.forEach((page, index) => {
+        if (page.type === 'page') {
+            htmlString += `
+                <li style="margin-top: 0.75rem; margin-bottom: 0.75rem;">
+                    <a href="${page.url}" class="teaser-link">
+                        <span class="image-span"><img class="thumbnail img-responsive" src="${page.img}" width="300" height="300" alt="${page.name}"></span>
+                        <span class="teaser">
+                            <span class="title-span">${page.name}</span>
+                        </span>
+                    </a>
+                </li>`;
         }
-        if (pages[i].type === 'page') {
-            li.style.marginLeft = '0rem';
-        }
-        // set the innerHTML of the li equal to the a element
-        li.innerHTML = a.outerHTML;
-        // add this li to htmlString
-        htmlString += li.outerHTML;
-    }
+    });
 
     if (asideElement) {
         const newSection = document.createElement('section');
         newSection.innerHTML = `
-                <h2 class="block-title">
-                    <a id="heading-id-12iuiu42" style="color:white;" href="https://www.sfmta.com/blog/celebrate-women-trades-muni-and-learn-how-work-their-fields">Women in the Trades at Muni</a>
-                </h2>
-                <div class="view-content">
-                    <ul style="list-style: none; padding-left:2rem;">
+            <h2 class="block-title">
+                <a id="heading-id-12iuiu42" style="color:white;" href="https://www.sfmta.com/blog/celebrate-women-trades-muni-and-learn-how-work-their-fields">Women in the Trades at Muni</a>
+            </h2>
+            <div class="view-content">
+                <ul style="list-style: none; padding-left:2rem;">
                     ${htmlString}
-                    </ul>
-                </div>
-            `;
+                </ul>
+            </div>
+        `;
         asideElement.appendChild(newSection);
     }
-
-    // create const with the direct parent of the aside element
-    const asideParent = asideElement.parentElement;
-
-    //add an ID to it of: custom-row-id-2376g3279
-    asideParent.id = 'custom-row-id-2376g3279';
-
-    //insert some custom css into a new <style> tag inside the <head> of the document
-    const style = document.createElement('style');
-    style.innerHTML = `
-        #heading-id-12iuiu42 {
-            color: white;
-        }
-        #heading-id-12iuiu42:hover {
-            color: white;
-        }
-
-        #custom-row-id-2376g3279 section:first-of-type {
-            position: relative!important;
-
-        }
-        #custom-row-id-2376g3279 aside:first-of-type {
-            position: relative!important;
-        }
-
-        @media (min-width: 768px) {
-
-            #custom-row-id-2376g3279 {
-                display: flex;
-                flex-wrap: wrap;
-            }
-            /*    #custom-row-id-2376g3279 > .col-sm-4[role="complementary"] {
-                order: -1;
-            } */
-                
-            #custom-row-id-2376g3279 > section:first-of-type {
-                width: 66.6%!important;
-            }
-            
-            #custom-row-id-2376g3279 > aside:first-of-type {
-                width: 33.3%!important;
-            }
-            
-        }
-
-        @media (min-width: 992px) {
-          }
-        `
-    document.head.appendChild(style);
-
 }
+
 
 main();
