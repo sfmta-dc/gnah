@@ -3,6 +3,7 @@ const pages = [
         "name": "Automotive Service Worker – Meet Nicole Humphrey",
         "type": "page",
         "url": "https://www.sfmta.com/sfmta-career-center/women-in-the-trades-sfmta/automotive-service-worker",
+        "img": "https://www.sfmta.com/sites/default/files/teaser-images/2024/03/automotive_service_worker_nicolehumphrey_headerimage.jpg",
         "section-name": "Women in the Trades at Muni",
         "section-url": "https://www.sfmta.com/blog/celebrate-women-trades-muni-and-learn-how-work-their-fields"
     },
@@ -10,6 +11,7 @@ const pages = [
         "name": "Contract Manager – Meet Katherine Kwok",
         "type": "page",
         "url": "https://www.sfmta.com/sfmta-career-center/women-in-the-trades-sfmta/contract-manager",
+        "img": "https://www.sfmta.com/sites/default/files/teaser-images/2024/03/analyst_kat_kwok_header_image.jpg",
         "section-name": "Women in the Trades at Muni",
         "section-url": "https://www.sfmta.com/blog/celebrate-women-trades-muni-and-learn-how-work-their-fields"
     },
@@ -17,6 +19,7 @@ const pages = [
         "name": "Engineer / Project Manager – Meet Becky Chen",
         "type": "page",
         "url": "https://www.sfmta.com/sfmta-career-center/women-in-the-trades-sfmta/engineer-project-manager",
+        "img": "https://www.sfmta.com/sites/default/files/teaser-images/2024/03/engineer-project-manager-becky-chen-header.jpg",
         "section-name": "Women in the Trades at Muni",
         "section-url": "https://www.sfmta.com/blog/celebrate-women-trades-muni-and-learn-how-work-their-fields"
     },
@@ -24,6 +27,7 @@ const pages = [
         "name": "Maintenance Machinist (Apprentice) – Meet Brittany McMartin",
         "type": "page",
         "url": "https://www.sfmta.com/sfmta-career-center/women-in-the-trades-sfmta/maintenance-machinist-apprentice",
+        "img": "https://www.sfmta.com/sites/default/files/teaser-images/2024/03/apprenticemachinist_brittanymcmartin_headerimage.jpg",
         "section-name": "Women in the Trades at Muni",
         "section-url": "https://www.sfmta.com/blog/celebrate-women-trades-muni-and-learn-how-work-their-fields"
     },
@@ -31,6 +35,7 @@ const pages = [
         "name": "Mechanic – Meet Jeena Villamor",
         "type": "page",
         "url": "https://www.sfmta.com/sfmta-career-center/women-in-the-trades-sfmta/mechanic-buses",
+        "img": "https://www.sfmta.com/sites/default/files/teaser-images/2024/03/mechanic_jeena_villamor_header_image_0.jpg",
         "section-name": "Women in the Trades at Muni",
         "section-url": "https://www.sfmta.com/blog/celebrate-women-trades-muni-and-learn-how-work-their-fields"
     },
@@ -38,6 +43,7 @@ const pages = [
         "name": "Mechanic – Jenny Keosaat",
         "type": "page",
         "url": "https://www.sfmta.com/sfmta-career-center/women-in-the-trades-sfmta/mechanic-historic-streetcars",
+        "img": "https://www.sfmta.com/sites/default/files/teaser-images/2024/03/mechanic_jenny_keosaat_header_image.jpg",
         "section-name": "Women in the Trades at Muni",
         "section-url": "https://www.sfmta.com/blog/celebrate-women-trades-muni-and-learn-how-work-their-fields"
     },
@@ -45,6 +51,7 @@ const pages = [
         "name": "Parts Storekeeper – Meet Evelyn Cotton",
         "type": "page",
         "url": "https://www.sfmta.com/sfmta-career-center/women-in-the-trades-sfmta/parts-storekeeper",
+        "img": "https://www.sfmta.com/sites/default/files/teaser-images/2024/03/partsstorekeeper_evelyn_cotton_header_image.jpg",
         "section-name": "Women in the Trades at Muni",
         "section-url": "https://www.sfmta.com/blog/celebrate-women-trades-muni-and-learn-how-work-their-fields"
     },
@@ -52,6 +59,7 @@ const pages = [
         "name": "Parts Storekeeper (Supervisor) -- Meet Deneitra Henry",
         "type": "page",
         "url": "https://www.sfmta.com/sfmta-career-center/women-in-the-trades-sfmta/parts-storekeeper-supervisor",
+        "img": "https://www.sfmta.com/sites/default/files/teaser-images/2024/03/partsstorekeepersupervisor_deneitrahenry_headerimage.jpg",
         "section-name": "Women in the Trades at Muni",
         "section-url": "https://www.sfmta.com/blog/celebrate-women-trades-muni-and-learn-how-work-their-fields"
     },
@@ -59,6 +67,7 @@ const pages = [
         "name": "Power System Operator -- Meet ess Goldworthy",
         "type": "page",
         "url": "https://www.sfmta.com/sfmta-career-center/women-in-the-trades-sfmta/power-system-operator",
+        "img": "https://www.sfmta.com/sites/default/files/teaser-images/2024/03/powersystemoperator_essgoldworthy_headerimage.jpg",
         "section-name": "Women in the Trades at Muni",
         "section-url": "https://www.sfmta.com/blog/celebrate-women-trades-muni-and-learn-how-work-their-fields"
     },
@@ -66,6 +75,7 @@ const pages = [
         "name": "Transit Car Cleaner – Meet Trina Dixon",
         "type": "page",
         "url": "https://www.sfmta.com/sfmta-career-center/women-in-the-trades-sfmta/transit-car-cleaner",
+        "img": "https://www.sfmta.com/sites/default/files/teaser-images/2024/03/transitcarcleaner_trina_dixon_-_header_image.jpg",
         "section-name": "Women in the Trades at Muni",
         "section-url": "https://www.sfmta.com/blog/celebrate-women-trades-muni-and-learn-how-work-their-fields"
     }
