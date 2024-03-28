@@ -156,9 +156,9 @@ function main() {
         newBreadcrumbItem.innerHTML = `<a href="${currentPage['section-url']}">${currentPage['section-name']}</a>`;
         newHomeItem.innerHTML = `<a href="https://www.sfmta.com/sfmta-career-center">SFMTA Career Center</a>`;
         breadcrumbOrderedList.insertBefore(newBreadcrumbItem, breadcrumbOrderedList.childNodes[1]);
-        if (previousSection['section-url'].length > 0 && previousSection['section-name'].length > 0) {
-            breadcrumbOrderedList.insertBefore(newHomeItem, breadcrumbOrderedList.childNodes[1]);
-        }
+        // if (previousSection['section-url'].length > 0 && previousSection['section-name'].length > 0) {
+        //     breadcrumbOrderedList.insertBefore(newHomeItem, breadcrumbOrderedList.childNodes[1]);
+        // }
     }
 
     // Navigation functionality
