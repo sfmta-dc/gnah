@@ -2,7 +2,7 @@ const pages = [
     {
         "name": "Automotive Service Worker – Meet Nicole Humphrey",
         "type": "page",
-        "url": "https://www.sfmta.com/sfmta-career-center/women-in-the-trades-sfmta/automotive-service-worker ",
+        "url": "https://www.sfmta.com/sfmta-career-center/women-in-the-trades-sfmta/automotive-service-worker",
         "section-name": "Women in the Trades at Muni",
         "section-url": "https://www.sfmta.com/blog/celebrate-women-trades-muni-and-learn-how-work-their-fields"
     },
