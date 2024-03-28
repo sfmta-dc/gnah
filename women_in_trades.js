@@ -133,37 +133,39 @@ function sidebar(currentPageIndex) {
     let htmlString = '';
 
     pages.forEach((page, index) => {
-        if (page.type === 'page') {
-            htmlString += `
-                <li style="margin-top: 0.75rem; margin-bottom: 0.75rem;">
-                    <a href="${page.url}" class="teaser-link">
-                        <span class="image-span">
-                            <img class="thumbnail img-responsive" src="${page.img}" style="width: 72px; height: 72px!important; object-fit: cover;" alt="${page['job-title']}: ${page['person-name']}">
-                        </span>
-                        <span class="teaser">
-                            <span class="title-span" style="display:block;">${page['job-title']}</span>
-                            <span class="text-span" style="display:block;">Meet ${page['person-name']}</span>
-                        </span>
-                    </a>
-                </li>`;
-        }
+        // Check if the current page matches the page in the iteration
+        const isCurrentPage = window.location.href.includes(page.url);
+
+        htmlString += `
+    <li style="margin-top: 0.75rem; margin-bottom: 0.75rem;">
+        <a href="${page.url}" class="teaser-link" ${isCurrentPage ? 'style="text-decoration: underline;"' : ''}>
+            <span class="image-span">
+                <img class="thumbnail img-responsive" src="${page.img}" style="width: 72px!important; height: 72px!important; object-fit: cover;" alt="${page['job-title']}: ${page['person-name']}">
+            </span>
+            <span class="teaser">
+                <span class="title-span" style="display: block;">${page['job-title']}</span>
+                <span class="text-span" style="display: block;">Meet ${page['person-name']}</span>
+            </span>
+        </a>
+    </li>`;
     });
 
     if (asideElement) {
         const newSection = document.createElement('section');
         newSection.innerHTML = `
-            <h2 class="block-title">
-                <a id="heading-id-12iuiu42" style="color:white;" href="/blog/celebrate-women-trades-muni-and-learn-how-work-their-fields">Women in the Trades at Muni</a>
-            </h2>
-            <div class="view-content">
-                <ul style="list-style: none; padding-left:2rem;">
-                    ${htmlString}
-                </ul>
-            </div>
-        `;
+    <h2 class="block-title">
+        <a id="heading-id-12iuiu42" style="color:white;" href="/blog/celebrate-women-trades-muni-and-learn-how-work-their-fields">Women in the Trades at Muni</a>
+    </h2>
+    <div class="view-content">
+        <ul style="list-style: none; padding-left:2rem;">
+            ${htmlString}
+        </ul>
+    </div>
+`;
         asideElement.appendChild(newSection);
     }
 }
+
 
 
 
