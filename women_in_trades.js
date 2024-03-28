@@ -326,9 +326,9 @@ function sidebar(currentPageIndex) {
                 display: flex;
                 flex-wrap: wrap;
             }
-                #custom-row-id-2376g3279 > .col-sm-4[role="complementary"] {
+            /*    #custom-row-id-2376g3279 > .col-sm-4[role="complementary"] {
                 order: -1;
-            }
+            } */
                 
             #custom-row-id-2376g3279 > section:first-of-type {
                 width: 66.6%!important;
