@@ -144,17 +144,17 @@ function main() {
 
     // Breadcrumb functionality
     const breadcrumbOrderedList = document.querySelector('.breadcrumb');
-    if (currentPage.type === 'section') {
-        const newBreadcrumbItem = document.createElement('li');
-        newBreadcrumbItem.innerHTML = `<a href="${currentPage['section-url']}">${currentPage['section-name']}</a>`;
-        breadcrumbOrderedList.insertBefore(newBreadcrumbItem, breadcrumbOrderedList.childNodes[1]);
-    }
+    // if (currentPage.type === 'section') {
+    //     const newBreadcrumbItem = document.createElement('li');
+    //     newBreadcrumbItem.innerHTML = `<a href="${currentPage['section-url']}">${currentPage['section-name']}</a>`;
+    //     breadcrumbOrderedList.insertBefore(newBreadcrumbItem, breadcrumbOrderedList.childNodes[1]);
+    // }
 
     if (currentPage.type === 'page') {
         const newBreadcrumbItem = document.createElement('li');
         const newHomeItem = document.createElement('li');
         newBreadcrumbItem.innerHTML = `<a href="${currentPage['section-url']}">${currentPage['section-name']}</a>`;
-        newHomeItem.innerHTML = `<a href="${previousSection['section-url']}">${previousSection['section-name']}</a>`;
+        newHomeItem.innerHTML = `<a href="https://www.sfmta.com/sfmta-career-center">SFMTA Career Center</a>`;
         breadcrumbOrderedList.insertBefore(newBreadcrumbItem, breadcrumbOrderedList.childNodes[1]);
         if (previousSection['section-url'].length > 0 && previousSection['section-name'].length > 0) {
             breadcrumbOrderedList.insertBefore(newHomeItem, breadcrumbOrderedList.childNodes[1]);
@@ -273,7 +273,7 @@ function sidebar(currentPageIndex) {
             a.style.textDecoration = 'underline';
         }
         if (pages[i].type === 'page') {
-            li.style.marginLeft = '2rem';
+            li.style.marginLeft = '0rem';
         }
         // set the innerHTML of the li equal to the a element
         li.innerHTML = a.outerHTML;
