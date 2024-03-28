@@ -43,7 +43,7 @@ const pages = [
     },
     {
         "name": "Parts Storekeeper – Meet Evelyn Cotton",
-        "type": "section",
+        "type": "page",
         "url": "https://www.sfmta.com/sfmta-career-center/women-in-the-trades-sfmta/parts-storekeeper",
         "section-name": "Women in the Trades at Muni",
         "section-url": "https://www.sfmta.com/blog/celebrate-women-trades-muni-and-learn-how-work-their-fields"
@@ -75,72 +75,72 @@ function main() {
     const currentPage = pages.find(page => page.url === window.location.href);
     const currentPageIndex = pages.findIndex(page => page.url === window.location.href);
 
-    const findPreviousSection = (pages, startIndex) => {
-        for (let i = startIndex - 1; i >= 0; i--) {
-            if (pages[i].type === 'section' | pages[i].type === 'home') {
-                return pages[i];
-            }
-        }
-        return null; // Return null if no section is found
-    };
-    const previousSection = findPreviousSection(pages, currentPageIndex);
+    // const findPreviousSection = (pages, startIndex) => {
+    //     for (let i = startIndex - 1; i >= 0; i--) {
+    //         if (pages[i].type === 'section' | pages[i].type === 'home') {
+    //             return pages[i];
+    //         }
+    //     }
+    //     return null; // Return null if no section is found
+    // };
+    // const previousSection = findPreviousSection(pages, currentPageIndex);
 
-    const findPreviousSectionBeforeParent = (pages, startIndex) => {
-        // First, find the direct parent section or home for the startIndex
-        let directParentIndex = -1;
-        for (let i = startIndex; i >= 0; i--) {
-            if (pages[i].type === 'section' || pages[i].type === 'home') {
-                directParentIndex = i;
-                break; // Stop at the first section or home found
-            }
-        }
+    // const findPreviousSectionBeforeParent = (pages, startIndex) => {
+    //     // First, find the direct parent section or home for the startIndex
+    //     let directParentIndex = -1;
+    //     for (let i = startIndex; i >= 0; i--) {
+    //         if (pages[i].type === 'section' || pages[i].type === 'home') {
+    //             directParentIndex = i;
+    //             break; // Stop at the first section or home found
+    //         }
+    //     }
 
-        // Now, find the section or home before the direct parent
-        for (let i = directParentIndex - 1; i >= 0; i--) {
-            if (pages[i].type === 'section' || pages[i].type === 'home') {
-                return pages[i];
-            }
-        }
+    //     // Now, find the section or home before the direct parent
+    //     for (let i = directParentIndex - 1; i >= 0; i--) {
+    //         if (pages[i].type === 'section' || pages[i].type === 'home') {
+    //             return pages[i];
+    //         }
+    //     }
 
-        return null; // Return null if no previous section or home is found before the parent
-    };
-    const previousSectionBeforeParent = findPreviousSectionBeforeParent(pages, currentPageIndex);
+    //     return null; // Return null if no previous section or home is found before the parent
+    // };
+    // const previousSectionBeforeParent = findPreviousSectionBeforeParent(pages, currentPageIndex);
 
-    const findNextSection = (pages, startIndex) => {
-        for (let i = startIndex + 1; i < pages.length; i++) {
-            if (pages[i].type === 'section') {
-                return pages[i];
-            }
-        }
-        return null; // Return null if no section is found
-    };
-    const nextSection = findNextSection(pages, currentPageIndex);
+    // const findNextSection = (pages, startIndex) => {
+    //     for (let i = startIndex + 1; i < pages.length; i++) {
+    //         if (pages[i].type === 'section') {
+    //             return pages[i];
+    //         }
+    //     }
+    //     return null; // Return null if no section is found
+    // };
+    // const nextSection = findNextSection(pages, currentPageIndex);
 
-    const findPreviousPage = (pages, startIndex) => {
-        for (let i = startIndex - 1; i >= 0; i--) {
-            if (pages[i].type === "section") {
-                return previousSectionBeforeParent;
-            }
-            if (pages[i].type === 'page') {
-                return pages[i];
-            }
-            return null;
-        }
-    };
-    const previousPage = findPreviousPage(pages, currentPageIndex);
+    // const findPreviousPage = (pages, startIndex) => {
+    //     for (let i = startIndex - 1; i >= 0; i--) {
+    //         if (pages[i].type === "section") {
+    //             return previousSectionBeforeParent;
+    //         }
+    //         if (pages[i].type === 'page') {
+    //             return pages[i];
+    //         }
+    //         return null;
+    //     }
+    // };
+    // const previousPage = findPreviousPage(pages, currentPageIndex);
 
-    const findNextPage = (pages, startIndex) => {
-        for (let i = startIndex + 1; i < pages.length; i++) {
-            if (pages[i].type === "section") {
-                return nextSection;
-            }
-            if (pages[i].type === 'page') {
-                return pages[i];
-            }
-            return null;
-        }
-    };
-    const nextPage = findNextPage(pages, currentPageIndex);
+    // const findNextPage = (pages, startIndex) => {
+    //     for (let i = startIndex + 1; i < pages.length; i++) {
+    //         if (pages[i].type === "section") {
+    //             return nextSection;
+    //         }
+    //         if (pages[i].type === 'page') {
+    //             return pages[i];
+    //         }
+    //         return null;
+    //     }
+    // };
+    // const nextPage = findNextPage(pages, currentPageIndex);
 
     // Breadcrumb functionality
     const breadcrumbOrderedList = document.querySelector('.breadcrumb');
