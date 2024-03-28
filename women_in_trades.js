@@ -85,80 +85,8 @@ function main() {
     const currentPage = pages.find(page => page.url === window.location.href);
     const currentPageIndex = pages.findIndex(page => page.url === window.location.href);
 
-    // const findPreviousSection = (pages, startIndex) => {
-    //     for (let i = startIndex - 1; i >= 0; i--) {
-    //         if (pages[i].type === 'section' | pages[i].type === 'home') {
-    //             return pages[i];
-    //         }
-    //     }
-    //     return null; // Return null if no section is found
-    // };
-    // const previousSection = findPreviousSection(pages, currentPageIndex);
-
-    // const findPreviousSectionBeforeParent = (pages, startIndex) => {
-    //     // First, find the direct parent section or home for the startIndex
-    //     let directParentIndex = -1;
-    //     for (let i = startIndex; i >= 0; i--) {
-    //         if (pages[i].type === 'section' || pages[i].type === 'home') {
-    //             directParentIndex = i;
-    //             break; // Stop at the first section or home found
-    //         }
-    //     }
-
-    //     // Now, find the section or home before the direct parent
-    //     for (let i = directParentIndex - 1; i >= 0; i--) {
-    //         if (pages[i].type === 'section' || pages[i].type === 'home') {
-    //             return pages[i];
-    //         }
-    //     }
-
-    //     return null; // Return null if no previous section or home is found before the parent
-    // };
-    // const previousSectionBeforeParent = findPreviousSectionBeforeParent(pages, currentPageIndex);
-
-    // const findNextSection = (pages, startIndex) => {
-    //     for (let i = startIndex + 1; i < pages.length; i++) {
-    //         if (pages[i].type === 'section') {
-    //             return pages[i];
-    //         }
-    //     }
-    //     return null; // Return null if no section is found
-    // };
-    // const nextSection = findNextSection(pages, currentPageIndex);
-
-    // const findPreviousPage = (pages, startIndex) => {
-    //     for (let i = startIndex - 1; i >= 0; i--) {
-    //         if (pages[i].type === "section") {
-    //             return previousSectionBeforeParent;
-    //         }
-    //         if (pages[i].type === 'page') {
-    //             return pages[i];
-    //         }
-    //         return null;
-    //     }
-    // };
-    // const previousPage = findPreviousPage(pages, currentPageIndex);
-
-    // const findNextPage = (pages, startIndex) => {
-    //     for (let i = startIndex + 1; i < pages.length; i++) {
-    //         if (pages[i].type === "section") {
-    //             return nextSection;
-    //         }
-    //         if (pages[i].type === 'page') {
-    //             return pages[i];
-    //         }
-    //         return null;
-    //     }
-    // };
-    // const nextPage = findNextPage(pages, currentPageIndex);
-
     // Breadcrumb functionality
     const breadcrumbOrderedList = document.querySelector('.breadcrumb');
-    // if (currentPage.type === 'section') {
-    //     const newBreadcrumbItem = document.createElement('li');
-    //     newBreadcrumbItem.innerHTML = `<a href="${currentPage['section-url']}">${currentPage['section-name']}</a>`;
-    //     breadcrumbOrderedList.insertBefore(newBreadcrumbItem, breadcrumbOrderedList.childNodes[1]);
-    // }
 
     if (currentPage.type === 'page') {
         const newBreadcrumbItem = document.createElement('li');
@@ -168,90 +96,10 @@ function main() {
         breadcrumbOrderedList.insertBefore(newBreadcrumbItem, breadcrumbOrderedList.childNodes[1]);
         breadcrumbOrderedList.insertBefore(newHomeItem, breadcrumbOrderedList.childNodes[1]);
     }
-    
-
-    // Navigation functionality
-    // if (currentPage.type === 'section') {
-    //     const regionContentDiv = document.querySelector('.region-content');
-    //     // console.log('Region Content Div:', regionContentDiv); // Log the region content DIV
-
-    //     if (!regionContentDiv.querySelector('section')) {
-    //         // console.log('No section found on this page');
-    //     } else {
-    //         // console.log('Previous Section for Navigation:', previousSection); // Log previous section before using
-    //         // console.log('Next Section for Navigation:', nextSection); // Log next section before using
-    //         const newSection = document.createElement('section');
-    //         newSection.innerHTML = `
-    //     <div style="display: flex; justify-content: space-between;">
-    //         <a href="${previousSection.url}">${previousSection.type === 'home' ? 'Home' : 'Previous Section'}</a>
-    //         ${nextSection ? `<a href="${nextSection.url}">Next Section</a>` : ''}
-    //     </div>
-    //     `;
-    //         regionContentDiv.appendChild(newSection);
-    //     }
-    // }
-
-    // if (currentPage.type === 'page') {
-    //     const nodeArticle = document.querySelector('.node');
-    //     // console.log('Node Article:', nodeArticle); // Log the node article
-
-    //     if (!nodeArticle) {
-    //         // console.log('No article found on this page');
-    //     } else {
-    //         const newSection = document.createElement('section');
-
-    //         newSection.innerHTML = `
-    //         <div style="display: flex; justify-content: space-between;">
-    //             ${previousPage ? `<a href="${previousPage.url}">${previousPage.type === 'page' ? 'Previous Page' : 'Previous Section'}</a>` : '<a href="https://www.sfmta.com/accessibility-strategy-needs-assessment-2024">Back to Home</a>'}
-    //             ${nextPage ? `<a href="${nextPage.url}">${nextPage.type === 'page' ? 'Next Page' : 'Next Section'}</a>` : '<a href="https://www.sfmta.com/accessibility-strategy-needs-assessment-2024">Back to Home</a>'}
-    //         </div>
-    //     `;
-    //         nodeArticle.appendChild(newSection);
-    //     }
-    // }
 
     if (currentPage.type === 'page') {
         sidebar(currentPageIndex);
     }
-
-    // if (currentPage.type === 'section') {
-    //     //
-    //     const asideElementStatus = document.querySelector('aside');
-    //     if (asideElementStatus) {
-    //         sidebar(currentPageIndex);
-    //     } else {
-    //         // create a const that finds a div with a class row which is inside a div with class main-container which is a direct child of the body element
-    //         const rowDiv = document.body.querySelector('div.main-container > div.row');
-
-    //         // find the section element which is the child of the row div
-    //         const sectionElement = rowDiv.querySelector('section');
-
-    //         // The section element will have a class name of col-sm-12. Remove that class and add a new one: col-sm-8
-    //         sectionElement.classList.remove('col-sm-12');
-    //         sectionElement.classList.add('col-sm-8');
-
-    //         let newAside = document.createElement('aside');
-    //         // add the class col-sm-4 to the aside element
-    //         newAside.classList.add('col-sm-4');
-    //         // add the role complementary to the aside element
-    //         newAside.setAttribute('role', 'complementary');
-
-    //         let newDivItem = document.createElement('div');
-    //         // add the two classes "region region-sidebar-second" to the newDivItem
-    //         newDivItem.classList.add('region', 'region-sidebar-second');
-
-    //         // set the innerHTML of the newAside equal to the newDivItem
-    //         // Since you want to append the div as an element and not HTML, we'll append the newDivItem as a child
-    //         newAside.appendChild(newDivItem);
-
-    //         // Add this new aside element inside the div row as a sibling to the sectionElement. The newAside comes just after the sectionElement.
-    //         sectionElement.insertAdjacentElement('afterend', newAside);
-
-    //         setTimeout(sidebar(currentPageIndex), 25);
-    //     }
-
-    // }
-
 }
 
 function sidebar(currentPageIndex) {
@@ -356,6 +204,4 @@ function sidebar(currentPageIndex) {
 
 }
 
-// wait 1000 ms then run main function
-// setTimeout(main, 200);
 main();
