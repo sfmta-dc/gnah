@@ -285,7 +285,7 @@ function sidebar(currentPageIndex) {
         const newSection = document.createElement('section');
         newSection.innerHTML = `
                 <h2 class="block-title">
-                    <a id="heading-id-12iuiu42" style="color:white;" href="https://www.sfmta.com/accessibility-strategy-needs-assessment-2024">Accessibility Strategy Needs Assessment</a>
+                    <a id="heading-id-12iuiu42" style="color:white;" href="https://www.sfmta.com/blog/celebrate-women-trades-muni-and-learn-how-work-their-fields">Women in the Trades at Muni</a>
                 </h2>
                 <div class="view-content">
                     <ul style="list-style: none; padding-left:2rem;">
