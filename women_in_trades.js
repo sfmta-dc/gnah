@@ -137,9 +137,12 @@ function sidebar(currentPageIndex) {
             htmlString += `
                 <li style="margin-top: 0.75rem; margin-bottom: 0.75rem;">
                     <a href="${page.url}" class="teaser-link">
-                        <span class="image-span"><img class="thumbnail img-responsive" src="${page.img}" width="300" height="300" alt="${page.name}"></span>
+                        <span class="image-span">
+                            <img class="thumbnail img-responsive" src="${page.img}" style="width: 72px; height: 72px!important; object-fit: cover;" alt="${page['job-title']}: ${page['person-name']}">
+                        </span>
                         <span class="teaser">
-                            <span class="title-span">${page.name}</span>
+                            <span class="title-span" style="display:block;">${page['job-title']}</span>
+                            <span class="text-span" style="display:block;">Meet ${page['person-name']}</span>
                         </span>
                     </a>
                 </li>`;
@@ -150,7 +153,7 @@ function sidebar(currentPageIndex) {
         const newSection = document.createElement('section');
         newSection.innerHTML = `
             <h2 class="block-title">
-                <a id="heading-id-12iuiu42" style="color:white;" href="https://www.sfmta.com/blog/celebrate-women-trades-muni-and-learn-how-work-their-fields">Women in the Trades at Muni</a>
+                <a id="heading-id-12iuiu42" style="color:white;" href="/blog/celebrate-women-trades-muni-and-learn-how-work-their-fields">Women in the Trades at Muni</a>
             </h2>
             <div class="view-content">
                 <ul style="list-style: none; padding-left:2rem;">
@@ -161,6 +164,8 @@ function sidebar(currentPageIndex) {
         asideElement.appendChild(newSection);
     }
 }
+
+
 
 
 main();

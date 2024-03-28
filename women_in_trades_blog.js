@@ -65,7 +65,7 @@
                 "section-url": "https://www.sfmta.com/blog/celebrate-women-trades-muni-and-learn-how-work-their-fields"
             },
             {
-                "title": "Parts Storekeeper (Supervisor)",
+                "title": "Parts Storekeeper Supervisor",
                 "name": "Meet Deneitra Henry",
                 "type": "page",
                 "url": "https://www.sfmta.com/sfmta-career-center/women-in-the-trades-sfmta/parts-storekeeper-supervisor",
