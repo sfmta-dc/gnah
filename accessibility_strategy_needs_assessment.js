@@ -540,7 +540,7 @@ function main() {
     }
 
     // Navigation functionality
-    if (currentPage.type === 'section') {
+    if (currentPage.type === 'section' || currentPage.type === 'home') {
         const regionContentDiv = document.querySelector('.region-content');
         // console.log('Region Content Div:', regionContentDiv); // Log the region content DIV
 
@@ -583,7 +583,7 @@ function main() {
         sidebar(currentPageIndex);
     }
 
-    if (currentPage.type === 'section') {
+    if (currentPage.type === 'section' || currentPage.type === 'home') {
         //
         const asideElementStatus = document.querySelector('aside');
         if (asideElementStatus) {
