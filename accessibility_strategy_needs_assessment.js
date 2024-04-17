@@ -49,30 +49,44 @@ const pages = [
         "section-url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024"
     },
     {
-        "name": "1.1 Consistent Design Guidelines",
+        "name": "1.1 Consistent Accessibility Guidance on Streets Projects",
         "type": "page",
-        "url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/streets-capital-projects/11-consistent-design-guidelines",
+        "url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/streets-capital-projects/11-consistent-accessibility-guidance-on-streets-projects",
         "section-name": "Streets: Capital Projects",
         "section-url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/streets-capital-projects"
     },
     {
-        "name": "1.2 Accessible Pedestrian Signals",
+        "name": "1.2 Multi-Agency Project Coordination",
         "type": "page",
-        "url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/streets-capital-projects/12-accessible-pedestrian-signals",
+        "url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/streets-capital-projects/12-multi-agency-project-coordination",
         "section-name": "Streets: Capital Projects",
         "section-url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/streets-capital-projects"
     },
     {
-        "name": "1.3 Accessible Parking and Loading",
+        "name": "1.3 Flexible and Responsive Safety Improvements",
         "type": "page",
-        "url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/streets-capital-projects/13-accessible-parking-and-loading",
+        "url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/streets-capital-projects/13-flexible-and-responsive-safety-improvements",
         "section-name": "Streets: Capital Projects",
         "section-url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/streets-capital-projects"
     },
     {
-        "name": "1.4 Parking and Charging of Personal Mobility Devices",
+        "name": "1.4 Accessible Pedestrian Signals",
         "type": "page",
-        "url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/streets-capital-projects/14-parking-and-charging-of-personal-mobility-devices",
+        "url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/streets-capital-projects/14-accessible-pedestrian-signals",
+        "section-name": "Streets: Capital Projects",
+        "section-url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/streets-capital-projects"
+    },
+    {
+        "name": "1.5 Accessible Parking and Loading",
+        "type": "page",
+        "url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/streets-capital-projects/15-accessible-parking-and-loading",
+        "section-name": "Streets: Capital Projects",
+        "section-url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/streets-capital-projects"
+    },
+    {
+        "name": "1.6 Parking and Charging of Personal Mobility Devices",
+        "type": "page",
+        "url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/streets-capital-projects/16-parking-and-charging-of-personal-mobility-devices",
         "section-name": "Streets: Capital Projects",
         "section-url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/streets-capital-projects"
     },
@@ -105,9 +119,9 @@ const pages = [
         "section-url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/streets-policy-and-planning"
     },
     {
-        "name": "2.4 Accessible Private Passenger Services",
+        "name": "2.4 Accessible Emerging Private Passenger Services",
         "type": "page",
-        "url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/streets-policy-and-planning/24-accessible-private-passenger-services",
+        "url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/streets-policy-and-planning/24-accessible-emerging-private-passenger-services",
         "section-name": "Streets: Policy and Planning",
         "section-url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/streets-policy-and-planning"
     },
@@ -217,6 +231,20 @@ const pages = [
         "section-url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/muni-service-planning-and-policy"
     },
     {
+        "name": "Paratransit Service Overview",
+        "type": "section",
+        "url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/paratransit-service-overview",
+        "section-name": "Accessibility Strategy Needs Assessment",
+        "section-url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024"
+    },
+    {
+        "name": "Who We Serve: Rider Profiles",
+        "type": "page",
+        "url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/paratransit-service-overview/who-we-serve-rider-profiles",
+        "section-name": "Paratransit Service Overview",
+        "section-url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/paratransit-service-overview"
+    },
+    {
         "name": "Paratransit: Mobility Management",
         "type": "section",
         "url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/paratransit-mobility-management",
@@ -224,30 +252,30 @@ const pages = [
         "section-url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024"
     },
     {
-        "name": "5.1 Diverse Travel Training Materials and Resources",
+        "name": "5.1 Effective Travel Training Resources and Materials",
         "type": "page",
-        "url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/paratransit-mobility-management/51-diverse-travel-training-materials-and-resources",
+        "url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/paratransit-mobility-management/51-effective-travel-training-resources-and-materials",
         "section-name": "Paratransit: Mobility Management",
         "section-url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/paratransit-mobility-management"
     },
     {
-        "name": "5.2 Training for All Customer-Facing Personnel",
+        "name": "5.2 \"No-Wrong-Door\" Approach",
         "type": "page",
-        "url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/paratransit-mobility-management/52-training-for-all-customer-facing-personnel",
+        "url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/paratransit-mobility-management/52-no-wrong-door-approach",
         "section-name": "Paratransit: Mobility Management",
         "section-url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/paratransit-mobility-management"
     },
     {
-        "name": "5.3 Support Community Health ",
+        "name": "5.3 Support Community Health",
         "type": "page",
-        "url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/paratransit-mobility-management/53-support-community-health-",
+        "url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/paratransit-mobility-management/53-support-community-health",
         "section-name": "Paratransit: Mobility Management",
         "section-url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/paratransit-mobility-management"
     },
     {
-        "name": "5.4 Targeted Spanish Language Outreach",
+        "name": "5.4 Improved Engagement to Non-English Speaking Communities",
         "type": "page",
-        "url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/paratransit-mobility-management/54-targeted-spanish-language-outreach",
+        "url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/paratransit-mobility-management/54-improved-engagement-to-non-english-speaking-communities",
         "section-name": "Paratransit: Mobility Management",
         "section-url": "https://www.sfmta.com/accessibility-strategy-needs-assessment-2024/paratransit-mobility-management"
     },
