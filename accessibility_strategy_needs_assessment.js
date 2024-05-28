@@ -731,7 +731,7 @@ function sidebar(currentPageIndex) {
             color: white;
         }
 
-        #custom-row-id-2376g3279 section:first-of-type {
+        #custom-row-id-2376g3279 main:first-of-type {
             position: relative!important;
 
         }
@@ -745,8 +745,9 @@ function sidebar(currentPageIndex) {
                 display: flex;
                 flex-wrap: wrap;
             }
-                #custom-row-id-2376g3279 > .col-sm-4[role="complementary"] {
-                order: -1;
+
+            #custom-row-id-2376g3279 > .col-sm-4[role="complementary"] {
+            order: -1;
             }
                 
             #custom-row-id-2376g3279 > section:first-of-type {
