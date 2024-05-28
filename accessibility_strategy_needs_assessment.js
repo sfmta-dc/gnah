@@ -695,7 +695,7 @@ function sidebar(currentPageIndex) {
             a.style.textDecoration = 'underline';
         }
         if (pages[i].type === 'page') {
-            li.style.marginLeft = '2rem';
+            li.style.marginLeft = '1rem';
         }
         // set the innerHTML of the li equal to the a element
         li.innerHTML = a.outerHTML;
@@ -712,7 +712,7 @@ function sidebar(currentPageIndex) {
                     <a id="heading-id-12iuiu42" style="color:white;" href="https://www.sfmta.com/accessibility-strategy-needs-assessment-2024">Accessibility Strategy Needs Assessment</a>
                 </h2>
                 <div class="view-content">
-                    <ul style="list-style: none; padding-left:2rem;">
+                    <ul style="list-style: none; padding-left:1rem;">
                     ${htmlString}
                     </ul>
                 </div>
