@@ -521,27 +521,52 @@ function main() {
     const nextPage = findNextPage(pages, currentPageIndex);
 
     // Breadcrumb functionality
-    const breadcrumbDiv = document.querySelector('.breadcrumb');
+    // const breadcrumbDiv = document.querySelector('.breadcrumb');
     // inside breadcrumbDiv, find an ordered list which is inside a nav element
-    const breadcrumbOrderedList = breadcrumbDiv.querySelector('nav ol');
+    // const breadcrumbOrderedList = document.querySelector('.breadcrumb nav ol');
+    // if (currentPage.type === 'section') {
+    //     const newBreadcrumbItem = document.createElement('li');
+    //     newBreadcrumbItem.classList.add('breadcrumb-item');
+    //     newBreadcrumbItem.innerHTML = `<a href="${currentPage['section-url']}">${currentPage['section-name']}</a>`;
+    //     breadcrumbOrderedList.insertBefore(newBreadcrumbItem, breadcrumbOrderedList.childNodes[1]);
+    // }
+
+    const breadcrumbOrderedList = document.querySelector('.breadcrumb nav ol');
     if (currentPage.type === 'section') {
         const newBreadcrumbItem = document.createElement('li');
         newBreadcrumbItem.classList.add('breadcrumb-item');
         newBreadcrumbItem.innerHTML = `<a href="${currentPage['section-url']}">${currentPage['section-name']}</a>`;
-        breadcrumbOrderedList.insertBefore(newBreadcrumbItem, breadcrumbOrderedList.childNodes[1]);
+        breadcrumbOrderedList.insertBefore(newBreadcrumbItem, breadcrumbOrderedList.children[1]);
     }
+
+    // if (currentPage.type === 'page') {
+    //     const newBreadcrumbItem = document.createElement('li');
+    //     const newHomeItem = document.createElement('li');
+    //     newBreadcrumbItem.classList.add('breadcrumb-item');
+    //     newHomeItem.classList.add('breadcrumb-item');
+    //     newBreadcrumbItem.innerHTML = `<a href="${currentPage['section-url']}">${currentPage['section-name']}</a>`;
+    //     newHomeItem.innerHTML = `<a href="${previousSection['section-url']}">${previousSection['section-name']}</a>`;
+    //     breadcrumbOrderedList.insertBefore(newBreadcrumbItem, breadcrumbOrderedList.childNodes[1]);
+    //     if (previousSection['section-url'].length > 0 && previousSection['section-name'].length > 0) {
+    //         breadcrumbOrderedList.insertBefore(newHomeItem, breadcrumbOrderedList.childNodes[1]);
+    //     }
+    // }
 
     if (currentPage.type === 'page') {
         const newBreadcrumbItem = document.createElement('li');
         const newHomeItem = document.createElement('li');
+
         newBreadcrumbItem.classList.add('breadcrumb-item');
         newHomeItem.classList.add('breadcrumb-item');
+
         newBreadcrumbItem.innerHTML = `<a href="${currentPage['section-url']}">${currentPage['section-name']}</a>`;
         newHomeItem.innerHTML = `<a href="${previousSection['section-url']}">${previousSection['section-name']}</a>`;
-        breadcrumbOrderedList.insertBefore(newBreadcrumbItem, breadcrumbOrderedList.childNodes[1]);
+
         if (previousSection['section-url'].length > 0 && previousSection['section-name'].length > 0) {
-            breadcrumbOrderedList.insertBefore(newHomeItem, breadcrumbOrderedList.childNodes[1]);
+            breadcrumbOrderedList.insertBefore(newHomeItem, breadcrumbOrderedList.children[1]);
         }
+
+        breadcrumbOrderedList.insertBefore(newBreadcrumbItem, breadcrumbOrderedList.children[1]);
     }
 
     // Navigation functionality
