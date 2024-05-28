@@ -521,7 +521,9 @@ function main() {
     const nextPage = findNextPage(pages, currentPageIndex);
 
     // Breadcrumb functionality
-    const breadcrumbOrderedList = document.querySelector('.breadcrumb');
+    const breadcrumbDiv = document.querySelector('.breadcrumb');
+    // inside breadcrumbDiv, find an ordered list which is inside a nav element
+    const breadcrumbOrderedList = breadcrumbDiv.querySelector('nav ol');
     if (currentPage.type === 'section') {
         const newBreadcrumbItem = document.createElement('li');
         newBreadcrumbItem.innerHTML = `<a href="${currentPage['section-url']}">${currentPage['section-name']}</a>`;
