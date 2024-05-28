@@ -562,11 +562,13 @@ function main() {
         newBreadcrumbItem.innerHTML = `<a href="${currentPage['section-url']}">${currentPage['section-name']}</a>`;
         newHomeItem.innerHTML = `<a href="${previousSection['section-url']}">${previousSection['section-name']}</a>`;
 
+        // Insert the newBreadcrumbItem as the second item
+        breadcrumbOrderedList.insertBefore(newBreadcrumbItem, breadcrumbOrderedList.children[1]);
+
+        // If the previousSection is valid, insert newHomeItem before newBreadcrumbItem
         if (previousSection['section-url'].length > 0 && previousSection['section-name'].length > 0) {
             breadcrumbOrderedList.insertBefore(newHomeItem, breadcrumbOrderedList.children[1]);
         }
-
-        breadcrumbOrderedList.insertBefore(newBreadcrumbItem, breadcrumbOrderedList.children[1]);
     }
 
     // Navigation functionality
