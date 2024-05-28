@@ -526,6 +526,7 @@ function main() {
     const breadcrumbOrderedList = breadcrumbDiv.querySelector('nav ol');
     if (currentPage.type === 'section') {
         const newBreadcrumbItem = document.createElement('li');
+        newBreadcrumbItem.classList.add('breadcrumb-item');
         newBreadcrumbItem.innerHTML = `<a href="${currentPage['section-url']}">${currentPage['section-name']}</a>`;
         breadcrumbOrderedList.insertBefore(newBreadcrumbItem, breadcrumbOrderedList.childNodes[1]);
     }
@@ -533,6 +534,8 @@ function main() {
     if (currentPage.type === 'page') {
         const newBreadcrumbItem = document.createElement('li');
         const newHomeItem = document.createElement('li');
+        newBreadcrumbItem.classList.add('breadcrumb-item');
+        newHomeItem.classList.add('breadcrumb-item');
         newBreadcrumbItem.innerHTML = `<a href="${currentPage['section-url']}">${currentPage['section-name']}</a>`;
         newHomeItem.innerHTML = `<a href="${previousSection['section-url']}">${previousSection['section-name']}</a>`;
         breadcrumbOrderedList.insertBefore(newBreadcrumbItem, breadcrumbOrderedList.childNodes[1]);
