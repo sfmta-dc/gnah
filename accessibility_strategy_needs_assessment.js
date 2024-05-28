@@ -705,6 +705,8 @@ function sidebar(currentPageIndex) {
 
     if (asideElement) {
         const newSection = document.createElement('section');
+        // add the class block to the newSection
+        newSection.classList.add('block');
         newSection.innerHTML = `
                 <h2 class="block-title">
                     <a id="heading-id-12iuiu42" style="color:white;" href="https://www.sfmta.com/accessibility-strategy-needs-assessment-2024">Accessibility Strategy Needs Assessment</a>
