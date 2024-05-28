@@ -667,6 +667,9 @@ function sidebar(currentPageIndex) {
     const asideElement = document.querySelector('aside');
     // find a child DIV of this aside element. The DIV will have a class of "region region-sidebar-second"
     // remove it from the DOM
+
+    asideElement.classList.add('col-sm-4');
+
     console.log('Aside Element:', asideElement);
     if (asideElement) {
         const regionSidebarSecond = asideElement.querySelector('.region-sidebar-second');
@@ -750,7 +753,7 @@ function sidebar(currentPageIndex) {
             order: -1;
             }
                 
-            #custom-row-id-2376g3279 > section:first-of-type {
+            #custom-row-id-2376g3279 > main:first-of-type {
                 width: 66.6%!important;
             }
             
