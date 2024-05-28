@@ -672,9 +672,11 @@ function sidebar(currentPageIndex) {
 
     console.log('Aside Element:', asideElement);
     if (asideElement) {
-        const regionSidebarSecond = asideElement.querySelector('.region-sidebar-second');
-        if (regionSidebarSecond) {
-            asideElement.removeChild(regionSidebarSecond);
+        // const regionSidebarSecond = asideElement.querySelector('.region-sidebar-second');
+        // find a html element with an id that starts with "block-"
+        const blockElement = asideElement.querySelector('[id^="block-"]');
+        if (blockElement) {
+            asideElement.removeChild(blockElement);
         }
     }
     let htmlString = '';
