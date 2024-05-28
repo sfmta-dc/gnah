@@ -625,7 +625,7 @@ function main() {
         //
         const asideElementStatus = document.querySelector('aside');
         if (asideElementStatus) {
-            console.log('Aside element exists');
+            console.log('On home. Aside element exists');
             sidebar(currentPageIndex);
         } else {
             console.log('Aside element does not exist');
@@ -667,6 +667,7 @@ function sidebar(currentPageIndex) {
     const asideElement = document.querySelector('aside');
     // find a child DIV of this aside element. The DIV will have a class of "region region-sidebar-second"
     // remove it from the DOM
+    console.log('Aside Element:', asideElement);
     if (asideElement) {
         const regionSidebarSecond = asideElement.querySelector('.region-sidebar-second');
         if (regionSidebarSecond) {
