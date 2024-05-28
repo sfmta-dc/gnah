@@ -541,7 +541,7 @@ function main() {
 
     // Navigation functionality
     if (currentPage.type === 'section') {
-        const regionContentDiv = document.querySelector('.region-content');
+        const regionContentDiv = document.querySelector('.block-system-main-block');
         // console.log('Region Content Div:', regionContentDiv); // Log the region content DIV
 
         if (!regionContentDiv.querySelector('section')) {
